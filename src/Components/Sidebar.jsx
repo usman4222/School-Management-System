@@ -4,6 +4,7 @@ import menu from "../assets/svg/menu.svg";
 import graph from "../assets/svg/graph.svg";
 import admin from "../assets/svg/admin.svg";
 import admission from "../assets/svg/admission.svg";
+import { Link } from "react-router-dom";
 
 const navItems = [
   { id: "dashboard", label: "Dashboard", icon: graph },
@@ -12,8 +13,16 @@ const navItems = [
 ];
 
 const classOptions = [
-  { id: "classManagement", label: "Class Management" },
-  { id: "schoolManagement", label: "School Management" },
+  {
+    id: "classManagement",
+    label: "Class Management",
+    path: "/class-management",
+  },
+  {
+    id: "schoolManagement",
+    label: "School Management",
+    path: "/class-management",
+  },
 ];
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -24,7 +33,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   const handleNavClick = (id) => {
     setActiveNav(id);
     if (id === "admin") {
-      setDropdownOpen((prev) => !prev); 
+      setDropdownOpen((prev) => !prev);
     } else {
       setDropdownOpen(false);
     }
@@ -90,16 +99,20 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </nav>
             {id === "admin" && dropdownOpen && (
               <div className="pl-[14px]">
-                {classOptions.map(({ id, label }) => (
-                  <div
+                {classOptions.map(({ id, label, path }) => (
+                  <Link
+                    to={path} 
                     key={id}
-                    className={`py-[10px] px-[14px] cursor-pointer transition-all duration-300  ${
+                    onClick={() => {
+                      handleClassSelect(id); 
+                      setDropdownOpen(false);
+                    }}
+                    className={`py-[10px] px-[14px] cursor-pointer transition-all duration-300 ${
                       selectedClass === id ? "bg-[#F3F6FA]" : ""
                     } hover:bg-[#F3F6FA] rounded-[6px]`}
-                    onClick={() => handleClassSelect(id)}
                   >
                     <span className="text-[#3B424A]">{label}</span>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
