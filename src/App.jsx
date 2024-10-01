@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Suspense, lazy, useState } from "react";
+import Navbar from "./Components/Navbar.jsx";
 
 const Dashboard = lazy(() => import("./Pages/Dashboard/index.jsx"));
 
@@ -18,7 +19,7 @@ function App() {
           path="/"
           element={
             // <Suspense fallback={<div>Loading...</div>}>
-              <Dashboard />
+            <Dashboard />
             // </Suspense>
           }
         />

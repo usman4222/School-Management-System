@@ -18,13 +18,14 @@ import {
   FileText,
   ChevronRight,
 } from "lucide-react";
-import notification from "../../assets/svg/notification.svg";
-import settings from "../../assets/svg/settings.svg";
-import Sidebar from "../../Components/Sidebar";
 
+import Sidebar from "../../Components/Sidebar";
+import Navbar from "../../Components/Navbar";
+import DashBoardCard from "../../Components/DashBoardCard";
+import usersImage from "../../assets/svg/users.svg";
+import plusImage from "../../assets/svg/plus.svg";
 
 // const Sidebar = ({ isOpen, toggleSidebar }) => {
-
 
 //   return (
 //     <aside
@@ -67,29 +68,6 @@ import Sidebar from "../../Components/Sidebar";
 //     </aside>
 //   );
 // };
-
-const TopBar = () => (
-  <header className="bg-[#ffffff] shadow-md py-6 px-24 flex justify-between items-center fixed top-0 left-0 right-0 z-30">
-    <div className="flex items-center">
-      <h2 className="font-montserrat text-sm font-medium leading-[22px] text-left text-[#727983]">
-        School Management System V 1.0
-      </h2>
-    </div>
-    <div className="flex items-center space-x-4">
-      <span className="font-montserrat text-[14px] font-medium leading-[22px] text-left  md:inline">
-        Last login: 19:00:00 - 12/02/2024
-      </span>
-      <div className="flex gap-10">
-        <div className="bg-[#F1F5F9]  cursor-pointer rounded-full h-[44px] w-[44px] flex justify-center items-center">
-          <img src={notification} alt="notification" />
-        </div>
-        <div className="bg-[#F1F5F9]  cursor-pointer rounded-full h-[44px] w-[44px] flex justify-center items-center">
-          <img src={settings} alt="settings" />
-        </div>
-      </div>
-    </div>
-  </header>
-);
 
 // const StatCard = ({ title, value, viewAll }) => (
 //   <div className="bg-white p-4 rounded-lg shadow">
@@ -184,15 +162,35 @@ export default function Dashboard() {
           isOpen ? "ml-64" : "ml-20"
         }`}
       >
-        {/* <TopBar /> */}
-        {/* <main className="p-4 mt-16">
+        {/* <Navbar /> */}
+        <main className="p-4 mt-16">
           <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-            <StatCard title="Total Students" value="1,290" viewAll="View all" />
+            {/* <StatCard title="Total Students" value="1,290" viewAll="View all" />
             <StatCard title="Total Teachers" value="26" viewAll="View all" />
-            <StatCard title="Upcoming Events" value="4" viewAll="View all" />
+            <StatCard title="Upcoming Events" value="4" viewAll="View all" /> */}
+
+            <DashBoardCard
+              title="Total Students"
+              total="1,290"
+              usersImage={usersImage}
+              plusImage={plusImage}
+            />
+            <DashBoardCard
+              title="Total Students"
+              total="1,290"
+              usersImage={usersImage}
+              bgColor = "#10B9811A"
+              plusImage={plusImage}
+            />
+            <DashBoardCard
+              title="Total Students"
+              total="1,290"
+              usersImage={usersImage}
+              plusImage={plusImage}
+            />
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div className="lg:col-span-2">
               <AttendanceCard />
             </div>
@@ -200,8 +198,8 @@ export default function Dashboard() {
           </div>
           <div className="mt-4">
             <TodoList />
-          </div>
-        </main> */}
+          </div> */}
+        </main>
       </div>
     </div>
   );
