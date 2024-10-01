@@ -24,6 +24,7 @@ import Navbar from "../../Components/Navbar";
 import DashBoardCard from "../../Components/DashBoardCard";
 import usersImage from "../../assets/svg/users.svg";
 import plusImage from "../../assets/svg/plus.svg";
+import AttendanceCard from "../../Components/AttendanceCard";
 
 // const Sidebar = ({ isOpen, toggleSidebar }) => {
 
@@ -190,15 +191,15 @@ export default function Dashboard() {
               plusImage={plusImage}
             />
           </div>
-          {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div className="lg:col-span-2">
               <AttendanceCard />
             </div>
-            <FinancesCard />
+            {/* <FinancesCard /> */}
           </div>
           <div className="mt-4">
-            <TodoList />
-          </div> */}
+            {/* <TodoList /> */}
+          </div>
         </main>
       </div>
     </div>
