@@ -4,7 +4,7 @@ import settings from "../assets/svg/settings.svg";
 
 const Navbar = () => {
   return (
-    <header className="bg-[#ffffff] shadow-md py-6 px-24 flex justify-between items-center fixed top-0 left-0 right-0 z-30">
+    <header className="bg-[#ffffff] shadow-md py-6 px-24 flex justify-between items-center  z-30">
       <div className="flex items-center">
         <h2 className="font-montserrat text-sm font-medium leading-[22px] text-left text-[#727983]">
           School Management System V 1.0

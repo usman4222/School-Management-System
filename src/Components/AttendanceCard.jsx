@@ -2,7 +2,7 @@ import React from "react";
 
 const AttendanceCard = () => {
   return (
-    <div className="w-full  px-5 gap-[10px] rounded-[10px] bg-white border border-gray-200 shadow-[0px_1px_3px_0px_#0051AF1A]">
+    <div className="w-[1090px] h-[241px]  px-5 gap-[10px] rounded-[10px] bg-white border border-gray-200 shadow-[0px_1px_3px_0px_#0051AF1A]">
       <div className="flex justify-between">
         <div className="mt-4">
           <h4 className="font-montserrat text-[20px] font-semibold leading-[24px] text-left">
@@ -20,8 +20,8 @@ const AttendanceCard = () => {
           </select>
         </div>
       </div>
-      <div className=" flex  justify-between">
-        <div className="flex flex-col gap-6">
+      <div className=" flex  justify-between pt-10">
+        <div className="flex flex-col  w-[341.33px] h-[122px] pt-[18px] gap-[10px] rounded-[10px]">
           <h5 className="text-[#4E5564] font-montserrat text-[16px] font-semibold leading-[20px] text-center">
             Present
           </h5>
@@ -29,8 +29,8 @@ const AttendanceCard = () => {
             8976
           </h6>
         </div>
-        <div className="w-[122px] h-0 gap-0 border-t border-gray-300 opacity-0 rotate-[-90deg]"></div>
-        <div className="flex flex-col gap-6">
+        <div className="w-[1px] bg-[#E2E8F0] h-[120px] gap-0 "></div>
+        <div div className="flex flex-col  w-[341.33px] h-[122px] pt-[18px] gap-[10px] rounded-[10px]">
           <h5 className="text-[#4E5564] font-montserrat text-[16px] font-semibold leading-[20px] text-center">
             Present
           </h5>
@@ -38,8 +38,8 @@ const AttendanceCard = () => {
             8976
           </h6>
         </div>
-        <div className="w-[122px] h-0 gap-0 border-t border-gray-300 opacity-0 rotate-[-90deg]"></div>
-        <div className="flex flex-col gap-6">
+        <div className="w-[1px] bg-[#E2E8F0] h-[120px] gap-0 "></div>
+        <div className="flex flex-col w-[341.33px] h-[122px] pt-[18px] gap-[10px] rounded-[10px]">
           <h5 className="text-[#4E5564] font-montserrat text-[16px] font-semibold leading-[20px] text-center">
             Present
           </h5>

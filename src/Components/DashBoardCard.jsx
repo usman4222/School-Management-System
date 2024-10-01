@@ -11,7 +11,7 @@ const DashBoardCard = ({
   viewAllText = "View all",
 }) => {
   return (
-    <div className="bg-white flex flex-col justify-between w-[360px] h-[184px] pt-[18px] gap-[10px] rounded-[10px] border-t border border-gray-200 shadow-[0px_1px_3px_0px_#0051AF1A] px-4">
+    <div className="bg-white flex flex-col justify-between w-[360px] h-[184px]  pt-[18px] gap-[10px] rounded-[10px] border-t border border-gray-200 shadow-[0px_1px_3px_0px_#0051AF1A] px-4">
       <div className="flex justify-between items-center">
         <div className={`bg-[${bgColor}] p-2 rounded-full`}>
           <img src={usersImage} alt="users" />
