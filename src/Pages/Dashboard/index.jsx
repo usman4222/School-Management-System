@@ -7,7 +7,7 @@ import plusImage from "../../assets/svg/plus.svg";
 import AttendanceCard from "../../Components/AttendanceCard";
 import FinanceCard from "../../Components/FinanceCard";
 import TodoList from "../../Components/TodoList";
-
+import Layout from "../../Components/Layout";
 
 export default function Dashboard() {
   const [isOpen, setIsOpen] = useState(true);
@@ -17,14 +17,8 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="flex ">
-      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
-      <div
-        className={`flex-1 transition-all duration-300 ease-in-out ${
-          isOpen ? "ml-0" : "ml-0"
-        }`}
-      >
-        <Navbar />
+    <>
+      <Layout>
         <main className="flex gap-5 p-4 mt-16">
           <div className="flex flex-col">
             <div>
@@ -59,11 +53,11 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="">
-              <FinanceCard />
-              <TodoList />
-            </div>
+            <FinanceCard />
+            <TodoList />
+          </div>
         </main>
-      </div>
-    </div>
+      </Layout>
+    </>
   );
 }

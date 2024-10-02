@@ -98,7 +98,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               )}
             </nav>
             {id === "admin" && dropdownOpen && (
-              <div className="pl-[14px]">
+              <div className="pl-[14px] mt-1">
                 {classOptions.map(({ id, label, path }) => (
                   <Link
                     to={path} 
@@ -107,11 +107,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                       handleClassSelect(id); 
                       setDropdownOpen(false);
                     }}
-                    className={`py-[10px] px-[14px] cursor-pointer transition-all duration-300 ${
+                    className={`  ${
                       selectedClass === id ? "bg-[#F3F6FA]" : ""
-                    } hover:bg-[#F3F6FA] rounded-[6px]`}
+                    } `}
                   >
-                    <span className="text-[#3B424A]">{label}</span>
+                    <div className="text-[#3B424A]  text-[14px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 hover:bg-[#F3F6FA] rounded-[6px]">{label}</div>
                   </Link>
                 ))}
               </div>
@@ -124,3 +124,4 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 };
 
 export default Sidebar;
+// 
