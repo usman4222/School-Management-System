@@ -1,23 +1,26 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Suspense, lazy, useState, useEffect } from "react";
-import ClassManagementPage from "./Pages/ClassManagementPage/index.jsx";
-import Login from "./Pages/Login.jsx";
-
 const Dashboard = lazy(() => import("./Pages/Dashboard/index.jsx"));
+const Login = lazy(() => import("./Pages/Login.jsx"));
+const ClassManagementPage = lazy(() =>
+  import("./Pages/ClassManagementPage/index.jsx")
+);
+const SectionManagementPage = lazy(() =>
+  import("./Pages/SectionManagementPage/index.jsx")
+);
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulating a network request or loading time
     const loadDashboard = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate a 1 second loading time
-      setLoading(false); // Set loading to false once the component is loaded
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setLoading(false);
     };
 
     loadDashboard();
-  }, []); // Empty dependency array means this runs once when the component mounts
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -32,7 +35,18 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/class-management" element={<ClassManagementPage />} />
+          <Route
+            path="/admin/class-management"
+            element={<ClassManagementPage />}
+          />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route
+            path="/admin/section-management"
+            element={<SectionManagementPage />}
+          />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>

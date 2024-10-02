@@ -43,7 +43,7 @@ const TableComponent = ({
       <div className="bg-[#F8FAFC] pt-5 rounded-[12px]">
         <div className="w-full flex items-center py-2 px-6  bg-[#F8FAFC] pt-4">
           {columns.map((column, index) => (
-            <div key={index} className="flex gap-3 items-center w-[490.97px]">
+            <div key={index} className="flex uppercase gap-3 items-center w-[490.97px]">
 
               {index === 0 && (
                 <label className="flex items-center cursor-pointer relative">
