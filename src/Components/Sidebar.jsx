@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const navItems = [
   { id: "dashboard", label: "Dashboard", path: "/", icon: graph },
-  { id: "admin", label: "Admin", icon: admin }, 
-  { id: "admission", label: "Admission", path: "/admission", icon: admission }, 
+  { id: "admin", label: "Admin", icon: admin },
+  { id: "admission", label: "Admission", path: "/admission", icon: admission },
 ];
 
 const classOptions = [
@@ -21,7 +21,12 @@ const classOptions = [
   {
     id: "sectionManagement",
     label: "Section Management",
-    path: "/admin/section-management", 
+    path: "/admin/section-management",
+  },
+  {
+    id: "subjectManagement",
+    label: "Subject Management",
+    path: "/admin/subject-management",
   },
 ];
 
@@ -62,7 +67,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <div className="pl-[14px]">
         {navItems.map(({ id, label, icon, path }) => (
           <div key={id}>
-            <Link to={path}> 
+            <Link to={path}>
               <nav
                 className={`pl-[14px] py-[14px] gap-4 rounded-[9px] flex cursor-pointer ${
                   activeNav === id
@@ -109,11 +114,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                       handleClassSelect(id);
                       setDropdownOpen(false);
                     }}
-                    className={`${
-                      selectedClass === id ? "bg-[#F3F6FA]" : ""
-                    }`}
+                    className={`${selectedClass === id ? "bg-[#F3F6FA]" : ""}`}
                   >
-                    <div className="text-[#3B424A] text-[14px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 hover:bg-[#F3F6FA] rounded-[6px]">{label}</div>
+                    <div className="text-[#3B424A] text-[14px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 hover:bg-[#F3F6FA] rounded-[6px]">
+                      {label}
+                    </div>
                   </Link>
                 ))}
               </div>

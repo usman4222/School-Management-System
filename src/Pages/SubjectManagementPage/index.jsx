@@ -7,7 +7,7 @@ import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
 
-const SectionManagementPage = () => {
+const SubjectManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
@@ -32,30 +32,48 @@ const SectionManagementPage = () => {
     });
   };
 
-  const handleEdit = (id) => {
-    console.log("Edit clicked for row with ID:", id);
+  const handleEdit = () => {
+    console.log("Edit clicked");
   };
 
-  const handleDelete = (id) => {
-    console.log("Delete clicked for row with ID:", id);
+  const handleDelete = () => {
+    console.log("Delete clicked");
   };
 
   const rows = [
-    { id: 1, createdAt: "May 11, 2024", className: "A" },
-    { id: 2, createdAt: "May 11, 2024", className: "B" },
-    { id: 3, createdAt: "May 11, 2024", className: "A" },
+    {
+      Period: "May 11, 2024",
+      subjectName: "Mathematics",
+      teacher: "Mr. Smith",
+    },
+    {
+      Period: "May 12, 2024",
+      subjectName: "Science",
+      teacher: "Ms. Johnson",
+    },
+    {
+      Period: "May 13, 2024",
+      subjectName: "History",
+      teacher: "Mr. Brown",
+    },
+    {
+      Period: "May 14, 2024",
+      subjectName: "English",
+      teacher: "Ms. Davis",
+    },
   ];
 
   const columns = [
-    { key: "createdAt", label: "Created At" },
-    { key: "className", label: "Class Name" },
+    { label: "Period", key: "Period", icon: updown },
+    { label: "Subject Name", key: "subjectName", icon: updown },
+    { label: "Teacher", key: "teacher", icon: updown },
   ];
 
+  const labelNames = ["Period", "Subject Name", "Teacher"];
 
 
+  
 
-  const labelNames = ["Created At", "Class Name"];
- 
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
   const currentRows = rows.slice(indexOfFirstRow, indexOfLastRow);
@@ -81,21 +99,21 @@ const SectionManagementPage = () => {
   return (
     <Layout>
       <div className="p-5 bg-[#f5f5fa]">
-        <Heading page={"Section Management"} />
+        <Heading page={"Subject Management"} />
         <div className="flex justify-between mb-5">
           <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 mt-5">
-            Section Management
+            Subject Management
           </h2>
           <div className="flex gap-3">
             <Button text={"Print"} btnImg={print} />
-            <Button text={"Add Section"} btnImg={plus} />
+            <Button text={"Add Subject"} btnImg={plus} />
           </div>
         </div>
 
         <TableComponent
           rows={currentRows}
           columns={columns}
-          labelNames={labelNames}
+          labelNames={labelNames} 
           handleCheckboxChange={handleCheckboxChange}
           checkedRows={checkedRows}
           handleEdit={handleEdit}
@@ -115,4 +133,4 @@ const SectionManagementPage = () => {
   );
 };
 
-export default SectionManagementPage;
+export default SubjectManagementPage;

@@ -9,7 +9,9 @@ const ClassManagementPage = lazy(() =>
 const SectionManagementPage = lazy(() =>
   import("./Pages/SectionManagementPage/index.jsx")
 );
-
+const SubjectManagementPage = lazy(() =>
+  import("./Pages/SubjectManagementPage/index.jsx")
+);
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -25,7 +27,6 @@ function App() {
   if (loading) {
     return <div>Loading...</div>;
   }
-
   return (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
@@ -46,6 +47,14 @@ function App() {
           <Route
             path="/admin/section-management"
             element={<SectionManagementPage />}
+          />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route
+            path="/admin/subject-management"
+            element={<SubjectManagementPage />}
           />
         </Routes>
       </Suspense>

@@ -39,99 +39,27 @@ const ClassManagementPage = () => {
   const handleDelete = () => {
     console.log("Delete clicked");
   };
-  const rows = [
-    {
-      createdAt: "2023-09-01",
-      className: "Class A",
-      description: "Description A",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
-    {
-      createdAt: "2023-09-02",
-      className: "Class B",
-      description: "Description B",
-    },
+ const rows = [
+    { createdAt: "2023-09-01", className: "Class A", description: "Description A" },
+    { createdAt: "2023-09-02", className: "Class B", description: "Description B" },
+    { createdAt: "2023-09-03", className: "Class C", description: "Description C" },
+    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
+    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
+    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
+    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
+    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
+    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
+    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
+    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
   ];
 
   const columns = [
-    { label: "Created At", icon: updown },
-    { label: "Class Name", icon: updown },
-    { label: "Description", icon: updown },
+    { key: "createdAt", label: "Created At", icon: updown },
+    { key: "className", label: "Class Name", icon: updown },
+    { key: "description", label: "Description", icon: updown },
   ];
+
+  const labelNames = ["Created At", "Class Name", "Description"];
 
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
@@ -171,6 +99,7 @@ const ClassManagementPage = () => {
         <TableComponent
           rows={currentRows}
           columns={columns}
+          labelNames={labelNames}
           handleCheckboxChange={handleCheckboxChange}
           checkedRows={checkedRows}
           handleEdit={handleEdit}

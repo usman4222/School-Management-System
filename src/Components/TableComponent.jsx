@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import threeDotsIcon from "../assets/svg/threedots.svg";
+import updown from "../assets/svg/updown.svg";
 
 const TableComponent = ({
   rows,
@@ -16,6 +17,7 @@ const TableComponent = ({
   totalRows,
   handleNextPage,
   handlePreviousPage,
+  labelNames,
 }) => {
   const [checkedRows, setCheckedRows] = useState([]);
 
@@ -28,10 +30,9 @@ const TableComponent = ({
     }
   };
 
- 
   const handleCheckAll = () => {
     if (checkedRows.length === rows.length) {
-      setCheckedRows([]); 
+      setCheckedRows([]);
     } else {
       setCheckedRows(rows.map((_, index) => index));
     }
@@ -41,16 +42,18 @@ const TableComponent = ({
     <div className="h-[100vh]">
       {/* Table Header */}
       <div className="bg-[#F8FAFC] pt-5 rounded-[12px]">
-        <div className="w-full flex items-center py-2 px-6  bg-[#F8FAFC] pt-4">
+        <div className="w-full flex items-center py-2 px-6 bg-[#F8FAFC] pt-4">
           {columns.map((column, index) => (
-            <div key={index} className="flex uppercase gap-3 items-center w-[490.97px]">
-
+            <div
+              key={index}
+              className="flex uppercase gap-3 items-center w-[490.97px]"
+            >
               {index === 0 && (
                 <label className="flex items-center cursor-pointer relative">
                   <input
                     type="checkbox"
                     className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded-[6px] shadow hover:shadow-md border border-slate-300 checked:bg-[#1A55A5] checked:border-[#1A55A5]"
-                    checked={checkedRows.length === rows.length} 
+                    checked={checkedRows.length === rows.length}
                     onChange={handleCheckAll}
                   />
                   <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
@@ -70,9 +73,9 @@ const TableComponent = ({
                 </label>
               )}
               <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                {column.label}
+                {labelNames[index]}
               </h6>
-              <img src={column.icon} alt="arrow" />
+              <img src={updown} alt="arrow" />
             </div>
           ))}
         </div>
@@ -82,7 +85,7 @@ const TableComponent = ({
       {rows.map((item, index) => (
         <div
           key={index}
-          className={`w-full flex items-center h-[58px] py-2 px-6  ${
+          className={`w-full flex items-center h-[58px] py-2 px-6 ${
             checkedRows.includes(index)
               ? "bg-[#E2E8F0] text-white"
               : "bg-[#F8FAFC]"
@@ -93,8 +96,8 @@ const TableComponent = ({
               <input
                 type="checkbox"
                 className="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded-[6px] shadow hover:shadow-md border border-slate-300 checked:bg-[#1A55A5] checked:border-[#1A55A5]"
-                checked={checkedRows.includes(index)} 
-                onChange={() => handleRowCheckboxChange(index)} 
+                checked={checkedRows.includes(index)}
+                onChange={() => handleRowCheckboxChange(index)}
               />
               <span className="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
                 <svg
@@ -112,15 +115,22 @@ const TableComponent = ({
               </span>
             </label>
             <h6 className="text-[#1A55A5] font-montserrat text-sm font-semibold leading-[22px]">
-              {item.createdAt}
+              {item[columns[0].key]}
             </h6>
           </div>
-          <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[490.97px] text-left">
-            {item.className}
-          </h6>
-          <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[490.97px] text-left">
-            {item.description}
-          </h6>
+          {columns.slice(1).map(
+            (
+              column,
+              colIndex // Start from index 1 to avoid duplication
+            ) => (
+              <h6
+                key={colIndex}
+                className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[490.97px] text-left"
+              >
+                {item[column.key]}
+              </h6>
+            )
+          )}
           <div className="relative">
             <img
               src={threeDotsIcon}
@@ -147,7 +157,7 @@ const TableComponent = ({
           </div>
         </div>
       ))}
-      {/* Pagination */}
+
       <div className="flex justify-end gap-3 px-5 h-[72px] bg-[#F8FAFC]">
         <div className="flex items-center gap-5 text-[#64748B]">
           <span className="font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
