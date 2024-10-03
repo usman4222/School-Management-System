@@ -6,6 +6,7 @@ import updown from "../../assets/svg/updown.svg";
 import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
+import AddFormModal from "../../Components/AddFormModal";
 
 const ClassManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -13,6 +14,11 @@ const ClassManagementPage = () => {
   const rowsPerPage = 10;
   const [checkedRows, setCheckedRows] = useState([]);
   const [dropdownVisible, setDropdownVisible] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+
+  const closeModal = () => setIsModalOpen(false);
 
   const handleRowClick = (index) => {
     setSelectedRow(index === selectedRow ? null : index);
@@ -39,18 +45,62 @@ const ClassManagementPage = () => {
   const handleDelete = () => {
     console.log("Delete clicked");
   };
- const rows = [
-    { createdAt: "2023-09-01", className: "Class A", description: "Description A" },
-    { createdAt: "2023-09-02", className: "Class B", description: "Description B" },
-    { createdAt: "2023-09-03", className: "Class C", description: "Description C" },
-    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
-    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
-    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
-    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
-    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
-    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
-    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
-    { createdAt: "2023-09-04", className: "Class D", description: "Description D" },
+  const rows = [
+    {
+      createdAt: "2023-09-01",
+      className: "Class A",
+      description: "Description A",
+    },
+    {
+      createdAt: "2023-09-02",
+      className: "Class B",
+      description: "Description B",
+    },
+    {
+      createdAt: "2023-09-03",
+      className: "Class C",
+      description: "Description C",
+    },
+    {
+      createdAt: "2023-09-04",
+      className: "Class D",
+      description: "Description D",
+    },
+    {
+      createdAt: "2023-09-04",
+      className: "Class D",
+      description: "Description D",
+    },
+    {
+      createdAt: "2023-09-04",
+      className: "Class D",
+      description: "Description D",
+    },
+    {
+      createdAt: "2023-09-04",
+      className: "Class D",
+      description: "Description D",
+    },
+    {
+      createdAt: "2023-09-04",
+      className: "Class D",
+      description: "Description D",
+    },
+    {
+      createdAt: "2023-09-04",
+      className: "Class D",
+      description: "Description D",
+    },
+    {
+      createdAt: "2023-09-04",
+      className: "Class D",
+      description: "Description D",
+    },
+    {
+      createdAt: "2023-09-04",
+      className: "Class D",
+      description: "Description D",
+    },
   ];
 
   const columns = [
@@ -92,7 +142,7 @@ const ClassManagementPage = () => {
           </h2>
           <div className="flex gap-3">
             <Button text={"Print"} btnImg={print} />
-            <Button text={"Add Class"} btnImg={plus} />
+            <Button text={"Add Class"} btnImg={plus}  onClick={openModal} />
           </div>
         </div>
 
@@ -115,6 +165,14 @@ const ClassManagementPage = () => {
           handlePreviousPage={handlePreviousPage}
         />
       </div>
+
+      {isModalOpen && (
+        <AddFormModal
+          isOpen={isModalOpen}
+          closeModal={closeModal}
+          // title="Add Class" 
+        />
+      )}
     </Layout>
   );
 };
