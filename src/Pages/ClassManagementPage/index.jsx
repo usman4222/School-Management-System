@@ -7,6 +7,7 @@ import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
 import AddFormModal from "../../Components/AddFormModal";
+import DeleteConfirmationModal from "../../Components/DeleteConfirmationModal";
 
 const ClassManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -15,10 +16,15 @@ const ClassManagementPage = () => {
   const [checkedRows, setCheckedRows] = useState([]);
   const [dropdownVisible, setDropdownVisible] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDelConfirmationModalOpen, setIsDelConfirmationModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
 
   const closeModal = () => setIsModalOpen(false);
+
+  const openDelConfirmationModal = () => setIsDelConfirmationModalOpen(true);
+
+  const closeDelConfirmationModal = () => setIsDelConfirmationModalOpen(false);
 
   const handleRowClick = (index) => {
     setSelectedRow(index === selectedRow ? null : index);
@@ -153,7 +159,7 @@ const ClassManagementPage = () => {
           handleCheckboxChange={handleCheckboxChange}
           checkedRows={checkedRows}
           handleEdit={handleEdit}
-          handleDelete={handleDelete}
+          handleDelete={openDelConfirmationModal}
           handleDropdownToggle={handleDropdownToggle}
           dropdownVisible={dropdownVisible}
           currentPage={currentPage}
@@ -170,6 +176,13 @@ const ClassManagementPage = () => {
         <AddFormModal
           isOpen={isModalOpen}
           closeModal={closeModal}
+          // title="Add Class" 
+        />
+      )}
+        {isDelConfirmationModalOpen && (
+        <DeleteConfirmationModal
+          isOpen={isDelConfirmationModalOpen}
+          closeModal={closeDelConfirmationModal}
           // title="Add Class" 
         />
       )}
