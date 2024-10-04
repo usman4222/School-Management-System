@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 // import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
-import cross from "../assets/svg/cross.svg";
+import cross from "../../assets/svg/cross.svg";
 
 export default function AddSectionFormModal() {
   const [open, setOpen] = useState(true);

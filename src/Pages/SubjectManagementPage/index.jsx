@@ -7,7 +7,7 @@ import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
 import { Link } from "react-router-dom";
-import TimeTableModal from "../../Components/TimeTableModal";
+import TimeTableModal from "../../Components/Modals/TimeTableModal";
 
 const SubjectManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);

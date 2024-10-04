@@ -7,7 +7,7 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import cross from "../assets/svg/cross.svg";
+import cross from "../../assets/svg/cross.svg";
 import DeleteModal from "./DeleteModal";
 
 export default function DeleteConfirmationModal() {

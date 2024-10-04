@@ -6,8 +6,8 @@ import updown from "../../assets/svg/updown.svg";
 import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
-import AddFormModal from "../../Components/AddFormModal";
-import DeleteConfirmationModal from "../../Components/DeleteConfirmationModal";
+import AddFormModal from "../../Components/Modals/AddFormModal";
+import DeleteConfirmationModal from "../../Components/Modals/DeleteConfirmationModal";
 
 const ClassManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);

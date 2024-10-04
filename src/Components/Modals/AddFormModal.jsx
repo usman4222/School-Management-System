@@ -8,9 +8,9 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 // import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
-import cross from "../assets/svg/cross.svg";
+import cross from "../../assets/svg/cross.svg";
 
-export default function TimeTableModal() {
+export default function AddFormModal() {
   const [open, setOpen] = useState(true);
 
   return (
@@ -27,12 +27,14 @@ export default function TimeTableModal() {
             className="relative transform  rounded-lg bg-white p-7 text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
             <div className="bg-white rounded-full absolute top-[-15px] right-[-15px] w-[28px] h-[28px] flex items-center justify-center">
-              <button onClick={() => setOpen(false)}>
+              <button
+                onClick={() => setOpen(false)}
+              >
                 <img src={cross} alt="cross" />
               </button>
             </div>
             <h3 className="font-montserrat text-base font-bold leading-6 text-left text-[#4D515A] uppercase">
-              Generate Time Table
+              Add Class
             </h3>
 
             <div className="my-5">
@@ -41,48 +43,28 @@ export default function TimeTableModal() {
                   htmlFor="addClass"
                   className="font-montserrat text-sm font-medium leading-5 text-left text-[#344054]"
                 >
-                  Period
+                  Class Name
                 </label>
                 <input
                   id="addClass"
                   type="text"
-                  placeholder="Period"
+                  placeholder="Class Name"
                   className="p-2 border-2 border-[#B5BDC5] rounded-[4px] focus:outline-none focus:ring-[#B5BDC5] text-[#667085] font-montserrat text-sm font-normal leading-6"
                 />
               </div>
               <div className="flex flex-col space-y-2 mt-5">
                 <label
-                  htmlFor="sectionSelector"
+                  htmlFor="addClass"
                   className="font-montserrat text-sm font-medium leading-5 text-left text-[#344054]"
                 >
-                  Starting Time
+                  Description
                 </label>
-                <select
-                  id="sectionSelector"
-                  className="p-2 border-2 border-[#B5BDC5] rounded-[4px] focus:outline-none focus:ring-[#B5BDC5] text-[#667085] font-montserrat text-sm font-normal leading-6"
-                >
-                  <option value="">Select</option>
-                  <option value="section1">Section 1</option>
-                  <option value="section2">Section 2</option>
-                  <option value="section3">Section 3</option>
-                </select>
-              </div>
-              <div className="flex flex-col space-y-2 mt-5">
-                <label
-                  htmlFor="sectionSelector"
-                  className="font-montserrat text-sm font-medium leading-5 text-left text-[#344054]"
-                >
-                  Ending Time
-                </label>
-                <select
-                  id="sectionSelector"
-                  className="p-2 border-2 border-[#B5BDC5] rounded-[4px] focus:outline-none focus:ring-[#B5BDC5] text-[#667085] font-montserrat text-sm font-normal leading-6"
-                >
-                  <option value="">Select</option>
-                  <option value="section1">Section 1</option>
-                  <option value="section2">Section 2</option>
-                  <option value="section3">Section 3</option>
-                </select>
+                <textarea
+                  id="addClass"
+                  type="text"
+                  placeholder="Description"
+                  className="p-2 pb-10 border-2 border-[#B5BDC5] rounded-[4px] focus:outline-none focus:ring-[#B5BDC5] text-[#667085] font-montserrat text-sm font-normal leading-6"
+                />
               </div>
             </div>
 
@@ -92,7 +74,7 @@ export default function TimeTableModal() {
                 onClick={() => setOpen(false)}
                 className="inline-flex w-full justify-center rounded-md  from-[#1A55A5] via-[#1A55A5] to-[#003F94] bg-[linear-gradient(90.6deg,#1A55A5_46.33%,#003F94_99.99%)] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
               >
-                Generate
+                Add
               </button>
               <button
                 type="button"

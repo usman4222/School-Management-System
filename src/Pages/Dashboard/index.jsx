@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Sidebar from "../../Components/Sidebar";
 import Navbar from "../../Components/Navbar";
-import DashBoardCard from "../../Components/DashBoardCard";
+import DashBoardCard from "../../Components/Cards/DashBoardCard";
 import usersImage from "../../assets/svg/users.svg";
 import plusImage from "../../assets/svg/plus.svg";
-import AttendanceCard from "../../Components/AttendanceCard";
-import FinanceCard from "../../Components/FinanceCard";
+import AttendanceCard from "../../Components/Cards/AttendanceCard";
+import FinanceCard from "../../Components/Cards/FinanceCard";
 import TodoList from "../../Components/TodoList";
 import Layout from "../../Components/Layout";
 

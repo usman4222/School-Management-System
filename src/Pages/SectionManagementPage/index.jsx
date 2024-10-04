@@ -6,8 +6,8 @@ import updown from "../../assets/svg/updown.svg";
 import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
-import AddFormModal from "../../Components/AddFormModal";
-import AddSectionFormModal from "../../Components/AddSectionFormModal";
+import AddFormModal from "../../Components/Modals/AddFormModal";
+import AddSectionFormModal from "../../Components/Modals/AddSectionFormModal";
 
 const SectionManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
