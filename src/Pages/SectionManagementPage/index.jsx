@@ -6,6 +6,8 @@ import updown from "../../assets/svg/updown.svg";
 import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
+import AddFormModal from "../../Components/AddFormModal";
+import AddSectionFormModal from "../../Components/AddSectionFormModal";
 
 const SectionManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -13,6 +15,11 @@ const SectionManagementPage = () => {
   const rowsPerPage = 10;
   const [checkedRows, setCheckedRows] = useState([]);
   const [dropdownVisible, setDropdownVisible] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+
+  const closeModal = () => setIsModalOpen(false);
 
   const handleRowClick = (index) => {
     setSelectedRow(index === selectedRow ? null : index);
@@ -51,11 +58,8 @@ const SectionManagementPage = () => {
     { key: "className", label: "Class Name" },
   ];
 
-
-
-
   const labelNames = ["Created At", "Class Name"];
- 
+
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
   const currentRows = rows.slice(indexOfFirstRow, indexOfLastRow);
@@ -88,7 +92,7 @@ const SectionManagementPage = () => {
           </h2>
           <div className="flex gap-3">
             <Button text={"Print"} btnImg={print} />
-            <Button text={"Add Section"} btnImg={plus} />
+            <Button text={"Add Section"} btnImg={plus} onClick={openModal} />
           </div>
         </div>
 
@@ -111,6 +115,13 @@ const SectionManagementPage = () => {
           handlePreviousPage={handlePreviousPage}
         />
       </div>
+      {isModalOpen && (
+        <AddSectionFormModal
+          isOpen={isModalOpen}
+          closeModal={closeModal}
+          // title="Add Class"
+        />
+      )}
     </Layout>
   );
 };
