@@ -18,6 +18,8 @@ const TableComponent = ({
   handleNextPage,
   handlePreviousPage,
   labelNames,
+  action1,
+  action2,
 }) => {
   const [checkedRows, setCheckedRows] = useState([]);
 
@@ -139,19 +141,21 @@ const TableComponent = ({
               className="cursor-pointer"
             />
             {dropdownVisible === index && (
-              <div className="absolute left-0 top-0 ml-4 bg-white shadow-lg rounded-md z-10">
-                <button
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  onClick={() => handleEdit(item)}
-                >
-                  Edit
-                </button>
-                <button
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  onClick={() => handleDelete(item.id)}
-                >
-                  Delete
-                </button>
+              <div className="absolute left-0 top-0 ml-4  shadow-lg rounded-md z-10">
+                <div className="flex flex-col items-start gap-[10px] self-stretch">
+                  <button
+                    className=" p-[5px_18px] text-sm text-gray-700"
+                    onClick={() => handleEdit(item)}
+                  >
+                    {action1}
+                  </button>
+                  <button
+                    className=" p-[5px_18px] text-sm text-gray-700 mr-2"
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    {action2}
+                  </button>
+                </div>
               </div>
             )}
           </div>

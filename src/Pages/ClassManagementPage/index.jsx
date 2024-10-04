@@ -169,6 +169,8 @@ const ClassManagementPage = () => {
           totalRows={totalRows}
           handleNextPage={handleNextPage}
           handlePreviousPage={handlePreviousPage}
+          action1={"Edit"}
+          action2={"Delete"}
         />
       </div>
 

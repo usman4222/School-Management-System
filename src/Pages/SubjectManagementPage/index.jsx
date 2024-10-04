@@ -7,6 +7,7 @@ import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
 import { Link } from "react-router-dom";
+import TimeTableModal from "../../Components/TimeTableModal";
 
 const SubjectManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -14,6 +15,12 @@ const SubjectManagementPage = () => {
   const rowsPerPage = 10;
   const [checkedRows, setCheckedRows] = useState([]);
   const [dropdownVisible, setDropdownVisible] = useState(null);
+  const [isDelConfirmationModalOpen, setIsDelConfirmationModalOpen] =
+    useState(false);
+
+  const openDelConfirmationModal = () => setIsDelConfirmationModalOpen(true);
+
+  const closeDelConfirmationModal = () => setIsDelConfirmationModalOpen(false);
 
   const handleRowClick = (index) => {
     setSelectedRow(index === selectedRow ? null : index);
@@ -117,7 +124,7 @@ const SubjectManagementPage = () => {
           handleCheckboxChange={handleCheckboxChange}
           checkedRows={checkedRows}
           handleEdit={handleEdit}
-          handleDelete={handleDelete}
+          handleDelete={openDelConfirmationModal}
           handleDropdownToggle={handleDropdownToggle}
           dropdownVisible={dropdownVisible}
           currentPage={currentPage}
@@ -127,8 +134,17 @@ const SubjectManagementPage = () => {
           totalRows={totalRows}
           handleNextPage={handleNextPage}
           handlePreviousPage={handlePreviousPage}
+          action1={"Edit"}
+          action2={"Time Table"}
         />
       </div>
+      {isDelConfirmationModalOpen && (
+        <TimeTableModal
+          isOpen={isDelConfirmationModalOpen}
+          closeModal={closeDelConfirmationModal}
+          // title="Add Class"
+        />
+      )}
     </Layout>
   );
 };
