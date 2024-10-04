@@ -6,6 +6,7 @@ import updown from "../../assets/svg/updown.svg";
 import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
+import { Link } from "react-router-dom";
 
 const SubjectManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -71,9 +72,6 @@ const SubjectManagementPage = () => {
 
   const labelNames = ["Period", "Subject Name", "Teacher"];
 
-
-  
-
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
   const currentRows = rows.slice(indexOfFirstRow, indexOfLastRow);
@@ -106,14 +104,16 @@ const SubjectManagementPage = () => {
           </h2>
           <div className="flex gap-3">
             <Button text={"Print"} btnImg={print} />
-            <Button text={"Add Subject"} btnImg={plus} />
+            <Link to="/admin/add-subject">
+              <Button text={"Add Subject"} btnImg={plus} />
+            </Link>
           </div>
         </div>
 
         <TableComponent
           rows={currentRows}
           columns={columns}
-          labelNames={labelNames} 
+          labelNames={labelNames}
           handleCheckboxChange={handleCheckboxChange}
           checkedRows={checkedRows}
           handleEdit={handleEdit}
