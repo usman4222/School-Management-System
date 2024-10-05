@@ -15,6 +15,9 @@ const SubjectManagementPage = lazy(() =>
 const AddSubjectPage = lazy(() => import("./Pages/AddSubjectPage/index.jsx"));
 const AttendancePage1 = lazy(() => import("./Pages/AttendancePage/index1.jsx"));
 const AttendancePage2 = lazy(() => import("./Pages/AttendancePage/index2.jsx"));
+const TeacherManagementPage = lazy(() =>
+  import("./Pages/TeacherManagementPage/index.jsx")
+);
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -75,6 +78,11 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/admin/attendance2" element={<AttendancePage2 />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/admin/teacher-management" element={<TeacherManagementPage />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>

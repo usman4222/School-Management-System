@@ -51,7 +51,7 @@ const index2 = () => {
         Absent: "2",
         Remarks: "John",
       },
-      
+
     // ... Repeat for other rows as needed
   ];
 
@@ -225,8 +225,8 @@ const index2 = () => {
                       <input
                         type="checkbox"
                         className="mr-2  w-[24px] h-[24px]"
-                        checked={checkedRows.includes(index)}
-                        onChange={() => handleRowCheckboxChange(index)}
+                        // checked={checkedRows.includes(index)}
+                        // onChange={() => handleRowCheckboxChange(index)}
                       />
                     </div>
                   ) : colIndex === 4 ? (
@@ -234,8 +234,8 @@ const index2 = () => {
                       <input
                         type="checkbox"
                         className="mr-2 w-[24px] h-[24px]"
-                        checked={checkedRows.includes(index)}
-                        onChange={() => handleRowCheckboxChange(index)}
+                        // checked={checkedRows.includes(index)}
+                        // onChange={() => handleRowCheckboxChange(index)}
                       />
                     </div>
                   ) : colIndex === 5 ? (
@@ -243,8 +243,8 @@ const index2 = () => {
                       <input
                         type="checkbox"
                         className="mr-2  w-[24px] h-[24px]"
-                        checked={checkedRows.includes(index)}
-                        onChange={() => handleRowCheckboxChange(index)}
+                        // checked={checkedRows.includes(index)}
+                        // onChange={() => handleRowCheckboxChange(index)}
                       />
                     </div>
                   ) : colIndex === 6 ? (

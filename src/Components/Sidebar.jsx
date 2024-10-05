@@ -29,6 +29,11 @@ const classOptions = [
     path: "/admin/subject-management",
   },
   {
+    id: "teacherManagement",
+    label: "Teacher Management",
+    path: "/admin/teacher-management",
+  },
+  {
     id: "attendance",
     label: "Attendance1",
     path: "/admin/attendance1",
