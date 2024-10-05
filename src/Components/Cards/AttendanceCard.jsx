@@ -2,14 +2,14 @@ import React from "react";
 
 const AttendanceCard = () => {
   return (
-    <div className="w-[1090px] h-[241px]  px-5 gap-[10px] rounded-[10px] bg-white border border-gray-200 shadow-[0px_1px_3px_0px_#0051AF1A]">
+    <div className="w-[1090px] h-[241px] p-[18px] gap-[10px] rounded-[10px] bg-white border border-gray-200 shadow-[0px_1px_3px_0px_#0051AF1A]">
       <div className="flex justify-between">
-        <div className="mt-4">
+        <div>
           <h4 className="font-montserrat text-[20px] font-semibold leading-[24px] text-left">
             Attendnace
           </h4>
         </div>
-        <div className="mt-4">
+        <div>
           <select className="border border-blue-500 rounded-md p-2 text-left">
             <option value="">Select Year</option>
             {[2020, 2021, 2022, 2023, 2024].map((year) => (
@@ -20,8 +20,8 @@ const AttendanceCard = () => {
           </select>
         </div>
       </div>
-      <div className=" flex  justify-between pt-10">
-        <div className="flex flex-col  w-[341.33px] h-[122px] pt-[18px] gap-[10px] rounded-[10px]">
+      <div className=" flex  justify-between py-[18px]">
+        <div className="flex w-[341.33px] h-[122px] flex-col p-[18px] gap-[10px] rounded-[10px]">
           <h5 className="text-[#4E5564] font-montserrat text-[16px] font-semibold leading-[20px] text-center">
             Present
           </h5>

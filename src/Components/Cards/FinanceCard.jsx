@@ -2,7 +2,7 @@ import React from "react";
 
 const FinanceCard = () => {
   return (
-    <div className="w-[514px] h-[435px] pt-[18px] gap-[20px] rounded-[10px] border border-gray-300  bg-white shadow-[0px_1px_3px_0px_#0051AF1A] px-3">
+    <div className="w-[514px] h-[435px] p-[18px] gap-[20px] rounded-[10px] border border-gray-300  bg-white shadow-[0px_1px_3px_0px_#0051AF1A] ">
       <div className="flex justify-between">
         <div className="mt-4">
           <h4 className="text-[#1E293B] font-montserrat text-lg font-semibold leading-6 ">
@@ -34,11 +34,11 @@ const FinanceCard = () => {
         { label: "Due Amount", value: "Rs. 6,85,258", color: "bg-[#726BEA]" },
         { label: "Expenses", value: "Rs. 6,65,258", color: "bg-[#64748B]" },
       ].map(({ label, value, color }) => (
-        <div key={label} className="mb-2">
-          <div className="flex justify-between text-sm mb-1">
+        <div key={label} className=" bg-red-300">
+          <div className="flex justify-between text-sm ">
             <span className="text-[#4E5564] font-montserrat text-base font-semibold leading-5 ">{label}</span>
           </div>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center ">
             <div className="w-full bg-gray-200 rounded-full h-2.5">
               <div className={`${color} h-2.5 rounded-full w-3/4`}></div>
             </div>

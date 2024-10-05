@@ -28,6 +28,11 @@ const classOptions = [
     label: "Subject Management",
     path: "/admin/subject-management",
   },
+  {
+    id: "attendance",
+    label: "Attendance",
+    path: "/admin/attendance",
+  },
 ];
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {

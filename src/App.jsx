@@ -15,6 +15,14 @@ const SubjectManagementPage = lazy(() =>
 const AddSubjectPage = lazy(() =>
   import("./Pages/AddSubjectPage/index.jsx")
 );
+const AttendancePage = lazy(() =>
+  import("./Pages/AttendancePage/index1.jsx")
+);
+
+
+
+
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -66,6 +74,14 @@ function App() {
           <Route
             path="/admin/add-subject"
             element={<AddSubjectPage />}
+          />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route
+            path="/admin/attendance"
+            element={<AttendancePage />}
           />
         </Routes>
       </Suspense>

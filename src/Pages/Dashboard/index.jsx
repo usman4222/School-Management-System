@@ -19,11 +19,11 @@ export default function Dashboard() {
   return (
     <>
       <Layout>
-        <main className="flex gap-5 p-4 mt-16">
-          <div className="flex flex-col">
+        <main className="flex gap-5 p-[12px] ">
+          <div className="flex flex-col gap-[10px]">
             <div>
-              <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+              <h2 className="text-2xl font-bold mb-[20px]">Dashboard</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px] ">
                 <DashBoardCard
                   title="Total Students"
                   total="1,290"
