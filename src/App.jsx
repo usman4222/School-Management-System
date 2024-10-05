@@ -12,16 +12,9 @@ const SectionManagementPage = lazy(() =>
 const SubjectManagementPage = lazy(() =>
   import("./Pages/SubjectManagementPage/index.jsx")
 );
-const AddSubjectPage = lazy(() =>
-  import("./Pages/AddSubjectPage/index.jsx")
-);
-const AttendancePage = lazy(() =>
-  import("./Pages/AttendancePage/index1.jsx")
-);
-
-
-
-
+const AddSubjectPage = lazy(() => import("./Pages/AddSubjectPage/index.jsx"));
+const AttendancePage1 = lazy(() => import("./Pages/AttendancePage/index1.jsx"));
+const AttendancePage2 = lazy(() => import("./Pages/AttendancePage/index2.jsx"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -71,18 +64,17 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route
-            path="/admin/add-subject"
-            element={<AddSubjectPage />}
-          />
+          <Route path="/admin/add-subject" element={<AddSubjectPage />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route
-            path="/admin/attendance"
-            element={<AttendancePage />}
-          />
+          <Route path="/admin/attendance1" element={<AttendancePage1 />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/admin/attendance2" element={<AttendancePage2 />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>

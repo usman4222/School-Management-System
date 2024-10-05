@@ -5,56 +5,54 @@ import Button from "../../Components/Button";
 import updown from "../../assets/svg/updown.svg";
 import print from "../../assets/svg/printer.svg";
 
-const index = () => {
+const index2 = () => {
   const [checkedRows, setCheckedRows] = useState([]);
   const [dropdownVisible, setDropdownVisible] = useState(null);
 
   const columns = [
-    { key: "Sr", label: "Sr" },
-    { key: "Class", label: "Class" },
-    { key: "Section", label: "Section" },
-    { key: "TotalStudents", label: "Total Students" },
-    { key: "Leave", label: "Leave" },
+    { key: "SrNo", label: "Sr No" },
+    { key: "RegNo", label: "Reg No" },
+    { key: "Student", label: "Student" },
+    { key: "FatherName", label: "Father Name" },
+    { key: "OnLeave", label: "On Leave" },
     { key: "Present", label: "Present" },
     { key: "Absent", label: "Absent" },
-    { key: "ClassTeacher", label: "Class Teacher" },
-    { key: "Status", label: "Status" },
+    { key: "Remarks", label: "Remarks" },
   ];
 
   const rows = [
     {
-      Sr: "1",
-      Class: "9th",
-      Section: "A",
-      TotalStudents: "100",
-      Leave: "2",
+      SrNo: "#132548",
+      RegNo: "#132548",
+      Student: "Hamid Nawaz",
+      FatherName: "John",
+      OnLeave: "2",
       Present: "2",
       Absent: "2",
-      ClassTeacher: "John",
-      Status: "--",
+      Remarks: "John",
     },
     {
-      Sr: "2",
-      Class: "9th",
-      Section: "A",
-      TotalStudents: "100",
-      Leave: "2",
-      Present: "2",
-      Absent: "2",
-      ClassTeacher: "John",
-      Status: "--",
-    },
-    {
-      Sr: "3",
-      Class: "9th",
-      Section: "A",
-      TotalStudents: "100",
-      Leave: "2",
-      Present: "2",
-      Absent: "2",
-      ClassTeacher: "John",
-      Status: "--",
-    },
+        SrNo: "#132548",
+        RegNo: "#132548",
+        Student: "Hamid Nawaz",
+        FatherName: "John",
+        OnLeave: "2",
+        Present: "2",
+        Absent: "2",
+        Remarks: "John",
+      },
+      {
+        SrNo: "#132548",
+        RegNo: "#132548",
+        Student: "Hamid Nawaz",
+        FatherName: "John",
+        OnLeave: "2",
+        Present: "2",
+        Absent: "2",
+        Remarks: "John",
+      },
+      
+    // ... Repeat for other rows as needed
   ];
 
   const handleRowCheckboxChange = (index) => {
@@ -133,7 +131,7 @@ const index = () => {
                     </p>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-[6px] h-[6px] bg-[##FF0000] mr-[10px]"></div>
+                    <div className="w-[6px] h-[6px] bg-[#FF0000] mr-[10px]"></div>
                     <h6 className="text-[#FF0000] font-montserrat text-[14px] font-semibold leading-[22px] uppercase mr-[20px]">
                       Absent
                     </h6>
@@ -143,10 +141,33 @@ const index = () => {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="flex items-center gap-[120px]">
+                <div className="flex items-center gap-[10px]">
+                  <h5 className="text-[#1E293B] font-montserrat text-[16px] font-medium leading-[28px]">
+                    Teacher Name:
+                  </h5>
+                  <span className="text-black font-montserrat text-[16px] font-medium leading-[28px]">
+                    Jogn
+                  </span>
+                </div>
+                <div className="flex items-center gap-[10px]">
+                  <h5 className="text-[#1E293B] font-montserrat text-[16px] font-medium leading-[28px]">
+                    Last Updated:
+                  </h5>
+                  <span className="text-black font-montserrat text-[16px] font-medium leading-[28px]">
+                    2h Ago
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-[10px]">
                 <button className="flex items-center p-[10px] gap-[4px] rounded-[9px] custom-gradient">
                   <span className="text-white font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
                     Print
+                  </span>
+                </button>
+                <button className="flex items-center p-[10px] gap-[4px] rounded-[9px] custom-gradient">
+                  <span className="text-white font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
+                    Download
                   </span>
                 </button>
               </div>
@@ -178,43 +199,73 @@ const index = () => {
               }`}
             >
               <div className="flex items-center w-[153px] gap-3">
-                <h6 className=" font-montserrat text-sm font-semibold leading-[22px]">
-                  {item.Sr}
+                <h6 className="text-[#4D515A]  font-montserrat text-sm font-semibold leading-[22px]">
+                  {item.SrNo}
                 </h6>
               </div>
               {columns.slice(1).map((column, colIndex) => (
-                <h6
+                <div
                   key={colIndex}
-                  className={`text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[153px] text-left ${
-                    column.key === "Present"
-                      ? "text-[#189200]" 
-                      : column.key === "Absent"
-                      ? "text-[#FF0000]" 
-                      : column.key === "Leave"
-                      ? "text-[#E07706]" 
-                      : ""
-                  }`}
+                  className="flex items-center w-[153px] gap-3"
                 >
-                  {item[column.key]}
-                </h6>
+                  {colIndex === 0 ? (
+                    <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                      {item.RegNo}
+                    </h6>
+                  ) : colIndex === 1 ? (
+                    <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                      {item.Student}
+                    </h6>
+                  ) : colIndex === 2 ? (
+                    <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                      {item.FatherName}
+                    </h6>
+                  ) : colIndex === 3 ? (
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        className="mr-2  w-[24px] h-[24px]"
+                        checked={checkedRows.includes(index)}
+                        onChange={() => handleRowCheckboxChange(index)}
+                      />
+                    </div>
+                  ) : colIndex === 4 ? (
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        className="mr-2 w-[24px] h-[24px]"
+                        checked={checkedRows.includes(index)}
+                        onChange={() => handleRowCheckboxChange(index)}
+                      />
+                    </div>
+                  ) : colIndex === 5 ? (
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        className="mr-2  w-[24px] h-[24px]"
+                        checked={checkedRows.includes(index)}
+                        onChange={() => handleRowCheckboxChange(index)}
+                      />
+                    </div>
+                  ) : colIndex === 6 ? (
+                    <input
+                      type="text"
+                      placeholder=""
+                      className=" flex  w-[229px]  p-2.5 items-center gap-2 rounded-md  border  border-gray-300  bg-white shadow-sm focus:outline-none focus:ring-2  focus:ring-blue-500"
+                    />
+                  ) : (
+                    <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                      {item.Status}
+                    </h6>
+                  )}
+                </div>
               ))}
             </div>
           ))}
-
-          <div className="flex justify-end gap-3 px-5 h-[72px] bg-[#F8FAFC]">
-            <div className="flex items-center gap-5 text-[#64748B]">
-              <span className="font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
-                1-3 of 3
-              </span>
-              <span className="font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
-                Rows per page: 10
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </Layout>
   );
 };
 
-export default index;
+export default index2;

@@ -30,8 +30,13 @@ const classOptions = [
   },
   {
     id: "attendance",
-    label: "Attendance",
-    path: "/admin/attendance",
+    label: "Attendance1",
+    path: "/admin/attendance1",
+  },
+  {
+    id: "attendance",
+    label: "Attendance2",
+    path: "/admin/attendance2",
   },
 ];
 
