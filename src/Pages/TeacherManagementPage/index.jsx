@@ -8,8 +8,9 @@ import Button from "../../Components/Button";
 import TableComponent from "../../Components/TableComponent";
 import AddFormModal from "../../Components/Modals/AddFormModal";
 import DeleteConfirmationModal from "../../Components/Modals/DeleteConfirmationModal";
-import threeDotsIcon from "../../assets/svg/threeDots.svg"
-import eye from "../../assets/svg/eye.svg"
+import threeDotsIcon from "../../assets/svg/threeDots.svg";
+import eye from "../../assets/svg/eye.svg";
+import { Link } from "react-router-dom";
 
 const ClassManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -62,9 +63,7 @@ const ClassManagementPage = () => {
       Contact: "+1 (670) 960-8854",
       Joining: "04/07/23",
     },
-
   ];
-  
 
   const columns = [
     { key: "TeacherId", label: "Teacher Id", icon: updown },
@@ -85,7 +84,6 @@ const ClassManagementPage = () => {
 
   const currentRangeStart = indexOfFirstRow + 1;
   const currentRangeEnd = Math.min(indexOfLastRow, totalRows);
-  
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
@@ -116,7 +114,9 @@ const ClassManagementPage = () => {
             </div>
           </div>
           <div className="flex gap-3">
-            <Button text={"Add Teacher"} btnImg={plus} onClick={openModal} />
+            <Link to="/admin/add-teacher">
+              <Button text={"Add Teacher"} btnImg={plus} />
+            </Link>
           </div>
         </div>
 
@@ -199,19 +199,14 @@ const ClassManagementPage = () => {
                   {item[columns[0].key]}
                 </h6>
               </div>
-              {columns.slice(1).map(
-                (
-                  column,
-                  colIndex 
-                ) => (
-                  <h6
-                    key={colIndex}
-                    className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[296px] text-left"
-                  >
-                    {item[column.key]}
-                  </h6>
-                )
-              )}
+              {columns.slice(1).map((column, colIndex) => (
+                <h6
+                  key={colIndex}
+                  className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[296px] text-left"
+                >
+                  {item[column.key]}
+                </h6>
+              ))}
               <div className="relative">
                 <img
                   src={eye}

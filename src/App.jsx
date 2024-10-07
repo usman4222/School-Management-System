@@ -15,6 +15,7 @@ const SubjectManagementPage = lazy(() =>
 const AddSubjectPage = lazy(() => import("./Pages/AddSubjectPage/index.jsx"));
 const AttendancePage1 = lazy(() => import("./Pages/AttendancePage/index1.jsx"));
 const AttendancePage2 = lazy(() => import("./Pages/AttendancePage/index2.jsx"));
+const AddTeacherPage = lazy(() => import("./Pages/TeacherManagementPage/AddTeacherPage.jsx"));
 const TeacherManagementPage = lazy(() =>
   import("./Pages/TeacherManagementPage/index.jsx")
 );
@@ -83,6 +84,11 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/admin/teacher-management" element={<TeacherManagementPage />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/admin/add-teacher" element={<AddTeacherPage />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>

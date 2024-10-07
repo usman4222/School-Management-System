@@ -34,7 +34,7 @@ const FinanceCard = () => {
         { label: "Due Amount", value: "Rs. 6,85,258", color: "bg-[#726BEA]" },
         { label: "Expenses", value: "Rs. 6,65,258", color: "bg-[#64748B]" },
       ].map(({ label, value, color }) => (
-        <div key={label} className=" bg-red-300">
+        <div key={label} className="">
           <div className="flex justify-between text-sm ">
             <span className="text-[#4E5564] font-montserrat text-base font-semibold leading-5 ">{label}</span>
           </div>
