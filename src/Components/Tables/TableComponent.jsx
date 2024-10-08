@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import threeDotsIcon from "../assets/svg/threedots.svg";
-import updown from "../assets/svg/updown.svg";
+import threeDotsIcon from "../../assets/svg/threedots.svg";
+import updown from "../../assets/svg/updown.svg";
 
 const TableComponent = ({
   rows,

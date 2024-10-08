@@ -5,7 +5,7 @@ import plus from "../../assets/svg/plus.svg";
 import updown from "../../assets/svg/updown.svg";
 import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
-import TableComponent from "../../Components/TableComponent";
+import TableComponent from "../../Components/Tables/TableComponent";
 import AddFormModal from "../../Components/Modals/AddFormModal";
 import DeleteConfirmationModal from "../../Components/Modals/DeleteConfirmationModal";
 import threeDotsIcon from "../../assets/svg/threeDots.svg";

@@ -5,7 +5,7 @@ import plus from "../../assets/svg/plus.svg";
 import updown from "../../assets/svg/updown.svg";
 import Layout from "../../Components/Layout";
 import Button from "../../Components/Button";
-import TableComponent from "../../Components/TableComponent";
+import TableComponent from "../../Components/Tables/TableComponent";
 import { Link } from "react-router-dom";
 import TimeTableModal from "../../Components/Modals/TimeTableModal";
 
