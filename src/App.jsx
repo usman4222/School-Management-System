@@ -15,9 +15,14 @@ const SubjectManagementPage = lazy(() =>
 const AddSubjectPage = lazy(() => import("./Pages/AddSubjectPage/index.jsx"));
 const AttendancePage1 = lazy(() => import("./Pages/AttendancePage/index1.jsx"));
 const AttendancePage2 = lazy(() => import("./Pages/AttendancePage/index2.jsx"));
-const AddTeacherPage = lazy(() => import("./Pages/TeacherManagementPage/AddTeacherPage.jsx"));
+const AddTeacherPage = lazy(() =>
+  import("./Pages/TeacherManagementPage/AddTeacherPage.jsx")
+);
 const TeacherManagementPage = lazy(() =>
   import("./Pages/TeacherManagementPage/index.jsx")
+);
+const EnrollmentPage = lazy(() =>
+  import("./Pages/EnrollmentPage/index.jsx")
 );
 
 function App() {
@@ -83,12 +88,20 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/admin/teacher-management" element={<TeacherManagementPage />} />
+          <Route
+            path="/admin/teacher-management"
+            element={<TeacherManagementPage />}
+          />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/admin/add-teacher" element={<AddTeacherPage />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/enrollment" element={<EnrollmentPage />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>

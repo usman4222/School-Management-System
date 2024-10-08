@@ -10,6 +10,7 @@ const navItems = [
   { id: "dashboard", label: "Dashboard", path: "/", icon: graph },
   { id: "admin", label: "Admin", icon: admin },
   { id: "admission", label: "Admission", path: "/admission", icon: admission },
+  { id: "enrollment", label: "Enrolment Form", path: "/enrollment", icon: admission },
 ];
 
 const classOptions = [
