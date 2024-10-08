@@ -3,6 +3,7 @@ import Layout from "../../Components/Layout";
 import Heading from "../../Components/Heading";
 import { Link } from "react-router-dom";
 import ArrowLeft from "../../assets/svg/ArrowLeft.svg";
+import BackButton from "../../Components/BackButton";
 
 const index = () => {
   return (
@@ -11,13 +12,7 @@ const index = () => {
         <Heading page={"Subject Management"} />
         <div className="flex gap-4 items-center my-5 ">
           <div>
-            <Link to="/admin/subject-management">
-              <img
-                src={ArrowLeft}
-                alt="back"
-                className="bg-white rounded-[9px] p-[8px] cursor-pointer"
-              />
-            </Link>
+            <BackButton path={"/admin/subject-management"} />
           </div>
           <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 ">
             Subject Management

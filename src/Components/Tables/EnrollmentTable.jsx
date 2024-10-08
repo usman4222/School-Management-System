@@ -3,13 +3,22 @@ import threeDotsIcon from "../../assets/svg/threedots.svg";
 import updown from "../../assets/svg/updown.svg";
 import TableDropdownMenu from "./TableDropdownMenu";
 import TablePagination from "./TablePagination";
+import DeleteConfirmationModal from "../Modals/DeleteConfirmationModal";
+import DeleteModal from "../Modals/DeleteModal";
 
 const EnrollmentTable = () => {
   const [checkedRows, setCheckedRows] = useState([]);
   const [dropdownVisible, setDropdownVisible] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDelConfirmationModalOpen, setIsDelConfirmationModalOpen] =
+    useState(false);
+  const [isDelModalOpen, setIsDelModalOpen] = useState(false);
 
+  const openDelModal = () => setIsDelModalOpen(true);
+
+  const closeDelModal = () => setIsDelModalOpen(false);
 
   const columns = [
     { key: "Sr", label: "Sr#" },
@@ -191,10 +200,13 @@ const EnrollmentTable = () => {
 
   const handleDelete = (itemId) => {
     console.log("Delete item with ID:", itemId);
-    setDropdownVisible(null); 
+    setDropdownVisible(null);
+    openDelConfirmationModal();
   };
 
+  const openDelConfirmationModal = () => setIsDelConfirmationModalOpen(true);
 
+  const closeDelConfirmationModal = () => setIsDelConfirmationModalOpen(false);
 
   return (
     <div className="h-[100vh]">
@@ -304,7 +316,9 @@ const EnrollmentTable = () => {
             <TableDropdownMenu
               visible={dropdownVisible === index}
               onEdit={() => handleEdit(item)}
-              onDelete={() => handleDelete(item.id)}
+              onDelete={() => {
+                handleDelete(item.id); // You may want to pass the item's ID
+              }}
             />
           </div>
         </div>
@@ -317,6 +331,25 @@ const EnrollmentTable = () => {
         onNextPage={handleNextPage}
         onPreviousPage={handlePreviousPage}
       />
+
+      {isDelConfirmationModalOpen && (
+        <DeleteConfirmationModal
+          isOpen={isDelConfirmationModalOpen}
+          closeModal={closeDelConfirmationModal}
+          heading={"Delete"}
+          content={"Do you want to delete this Form? "}
+          onConfirm={() => setIsDelModalOpen(true)}
+        />
+      )}
+
+      {isDelModalOpen && (
+        <DeleteModal
+          isOpen={isDelModalOpen}
+          closeModal={closeDelModal}
+          heading={"Delete"}
+          content={"Do you want to delete this class? By deleting the class the whole data will be gone.  "}
+        />
+      )}
     </div>
   );
 };

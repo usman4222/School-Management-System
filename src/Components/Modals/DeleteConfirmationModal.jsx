@@ -8,15 +8,13 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 import cross from "../../assets/svg/cross.svg";
-import DeleteModal from "./DeleteModal";
 
-export default function DeleteConfirmationModal() {
+export default function DeleteConfirmationModal({
+  heading,
+  content,
+  onConfirm,
+}) {
   const [openDel, setOpenDel] = useState(true);
-  const [isDelModalOpen, setIsDelModalOpen] = useState(false);
-
-  const openDelModal = () => setIsDelModalOpen(true);
-
-  const closeDelModal = () => setIsDelModalOpen(false);
 
   return (
     <Dialog open={openDel} onClose={setOpenDel} className="relative z-10">
@@ -37,18 +35,20 @@ export default function DeleteConfirmationModal() {
               </button>
             </div>
             <h3 className="font-montserrat text-base font-bold leading-6 text-[#4D515A] uppercase">
-              Delete Class
+              {heading}
             </h3>
 
             <h6 class="font-montserrat text-sm font-normal leading-5 text-left text-[#1E293B] mt-5">
-              Do you want to delete this class? By deleting the class the data
-              of 7 Sections will be gone.
+              {content}
             </h6>
 
             <div className=" px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 mt-3">
               <button
                 type="button"
-                onClick={() => setIsDelModalOpen(true)}
+                onClick={() => {
+                  onConfirm();
+                  setOpenDel(false);
+                }}
                 className="inline-flex w-full justify-center rounded-md  from-[#A51A1A] to-[#940000] bg-[linear-gradient(90.6deg,#A51A1A_46.33%,#940000_99.99%)] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
               >
                 Proceed
@@ -56,8 +56,8 @@ export default function DeleteConfirmationModal() {
               <button
                 type="button"
                 data-autofocus
-                onClick={() => setIsDelModalOpen(false)}
-                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                onClick={() => setOpenDel(false)}
+                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold focus:outline-none text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
                 Cancel
               </button>
@@ -65,13 +65,6 @@ export default function DeleteConfirmationModal() {
           </DialogPanel>
         </div>
       </div>
-      {isDelModalOpen && (
-        <DeleteModal
-          isOpen={isDelModalOpen}
-          closeModal={closeDelModal}
-          // title="Add Class"
-        />
-      )}
     </Dialog>
   );
 }

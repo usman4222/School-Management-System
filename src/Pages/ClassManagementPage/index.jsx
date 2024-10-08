@@ -16,7 +16,8 @@ const ClassManagementPage = () => {
   const [checkedRows, setCheckedRows] = useState([]);
   const [dropdownVisible, setDropdownVisible] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isDelConfirmationModalOpen, setIsDelConfirmationModalOpen] = useState(false);
+  const [isDelConfirmationModalOpen, setIsDelConfirmationModalOpen] =
+    useState(false);
 
   const openModal = () => setIsModalOpen(true);
 
@@ -148,7 +149,7 @@ const ClassManagementPage = () => {
           </h2>
           <div className="flex gap-3">
             <Button text={"Print"} btnImg={print} />
-            <Button text={"Add Class"} btnImg={plus}  onClick={openModal} />
+            <Button text={"Add Class"} btnImg={plus} onClick={openModal} />
           </div>
         </div>
 
@@ -175,17 +176,13 @@ const ClassManagementPage = () => {
       </div>
 
       {isModalOpen && (
-        <AddFormModal
-          isOpen={isModalOpen}
-          closeModal={closeModal}
-          // title="Add Class" 
-        />
+        <AddFormModal isOpen={isModalOpen} closeModal={closeModal} />
       )}
-        {isDelConfirmationModalOpen && (
+      {isDelConfirmationModalOpen && (
         <DeleteConfirmationModal
           isOpen={isDelConfirmationModalOpen}
           closeModal={closeDelConfirmationModal}
-          // title="Add Class" 
+          
         />
       )}
     </Layout>

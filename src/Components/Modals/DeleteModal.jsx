@@ -9,7 +9,7 @@ import {
 } from "@headlessui/react";
 import cross from "../../assets/svg/cross.svg";
 
-export default function DeleteModal() {
+export default function DeleteModal({ heading, content }) {
   const [openDel, setOpenDel] = useState(true);
 
   return (
@@ -31,12 +31,11 @@ export default function DeleteModal() {
               </button>
             </div>
             <h3 className="font-montserrat text-base font-bold leading-6 text-[#4D515A] uppercase">
-              Delete Class
+              {heading}
             </h3>
 
             <h6 class="font-montserrat text-sm font-normal leading-5 text-left text-[#1E293B] mt-5">
-              Do you want to delete this class? By deleting the class the whole
-              data will be gone.
+              {content}
             </h6>
             <div className="mt-5">
               <div className="flex flex-col space-y-2">
@@ -81,7 +80,7 @@ export default function DeleteModal() {
                 type="button"
                 data-autofocus
                 onClick={() => setOpenDel(false)}
-                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold focus:outline-none  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
                 Cancel
               </button>

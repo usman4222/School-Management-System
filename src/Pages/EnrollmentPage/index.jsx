@@ -28,7 +28,9 @@ const index = () => {
             Enrolment Form
           </h2>
           <div className="flex gap-3">
-            <Button text={"Add Student"} btnImg={<FaPlus />} />
+            <Link to="/add-student">
+              <Button text={"Add Student"} btnImg={<FaPlus />} />
+            </Link>
             <Button text={"Print"} btnImg={<FiPrinter />} />
           </div>
         </div>
