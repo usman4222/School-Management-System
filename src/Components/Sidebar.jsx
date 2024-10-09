@@ -11,6 +11,7 @@ const navItems = [
   { id: "admin", label: "Admin", icon: admin },
   { id: "admission", label: "Admission", path: "/admission", icon: admission },
   { id: "enrollment", label: "Enrolment Form", path: "/enrollment", icon: admission },
+  { id: "academics", label: "Academics", path: "/academics", icon: admission },
 ];
 
 const classOptions = [
