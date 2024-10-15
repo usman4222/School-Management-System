@@ -12,6 +12,7 @@ const navItems = [
   { id: "admission", label: "Admission", path: "/admission", icon: admission },
   { id: "enrollment", label: "Enrolment Form", path: "/enrollment", icon: admission },
   { id: "academics", label: "Academics", icon: admission },
+  { id: "all-students", label: "AllStudents", path: "/all-students", icon: admission },
 ];
 
 const adminDropdown = [
