@@ -43,16 +43,18 @@ const AddEnrollmentInfo = () => {
               <BackButton path={"/admin/teacher-management"} />
             </div>
             <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 ">
-            Add Student
+              Add Student
             </h2>
           </div>
           <div className=" px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-            <button
-              type="button"
-              className="inline-flex w-full justify-center rounded-md  from-[#1A55A5] via-[#1A55A5] to-[#003F94] bg-[linear-gradient(90.6deg,#1A55A5_46.33%,#003F94_99.99%)] p-[10px_18px] text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
-            >
-              Save
-            </button>
+            <Link to="/view-student">
+              <button
+                type="button"
+                className="inline-flex w-full justify-center rounded-md  from-[#1A55A5] via-[#1A55A5] to-[#003F94] bg-[linear-gradient(90.6deg,#1A55A5_46.33%,#003F94_99.99%)] p-[10px_18px] text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+              >
+                Save
+              </button>
+            </Link>
             <button
               type="button"
               className="inline-flex w-full justify-center rounded-[9px] border border-[var(--Stroke,#E2E8F0)] bg-white shadow-[2px_4px_10px_0px_rgba(180,191,205,0.2)] p-[10px_18px] text-[#F43F5E] font-montserrat text-[14px] font-medium leading-[20px] sm:ml-3 sm:w-auto"
