@@ -120,7 +120,7 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/academics" element={<AcademicsPage />} />
+          <Route path="/academics/students" element={<AcademicsPage />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
