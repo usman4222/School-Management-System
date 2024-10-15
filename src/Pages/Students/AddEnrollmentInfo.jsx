@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../../Components/Layout";
 import Heading from "../../Components/Heading";
-import { Link } from "react-router-dom";
-import ArrowLeft from "../../assets/svg/ArrowLeft.svg";
 import BackButton from "../../Components/BackButton";
 
-const AddTeacherPage = () => {
+const AddEnrollmentInfo = () => {
   const [fileName, setFileName] = useState("");
 
   const handleFileChange = (event) => {
@@ -37,14 +36,14 @@ const AddTeacherPage = () => {
   return (
     <Layout>
       <div className="p-5 bg-[#F1F5F9]">
-        <Heading page={"Teacher"} />
+        <Heading page={"Add Student"} />
         <div className="flex  justify-between items-center my-[14px] ">
           <div className="flex items-center gap-[20px]">
             <div>
               <BackButton path={"/admin/teacher-management"} />
             </div>
             <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 ">
-              Add Teacher
+            Add Student
             </h2>
           </div>
           <div className=" px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
@@ -495,4 +494,4 @@ const AddTeacherPage = () => {
   );
 };
 
-export default AddTeacherPage;
+export default AddEnrollmentInfo;

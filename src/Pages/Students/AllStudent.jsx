@@ -4,6 +4,7 @@ import Heading from "../../Components/Heading";
 import Button from "../../Components/Button";
 import { FaPlus } from "react-icons/fa6";
 import AllStudentTable from "../../Components/Tables/AllStudentTable";
+import { Link } from "react-router-dom";
 
 const AllStudent = () => {
   return (
@@ -15,7 +16,9 @@ const AllStudent = () => {
             Students
           </h2>
           <div className="flex gap-3">
-            <Button text={"Add Student"} btnImg={<FaPlus />}  />
+            <Link to="/add-enrollment">
+              <Button text={"Add Student"} btnImg={<FaPlus />} />
+            </Link>
           </div>
         </div>
       </div>
