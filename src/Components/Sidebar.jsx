@@ -13,6 +13,7 @@ const navItems = [
   { id: "enrollment", label: "Enrolment Form", path: "/enrollment", icon: admission },
   { id: "academics", label: "Academics", icon: admission },
   { id: "all-students", label: "AllStudents", path: "/all-students", icon: admission },
+  { id: "accountsOffice", label: "Accounts Office", path: "/accounts-office", icon: admission },
 ];
 
 const adminDropdown = [
@@ -20,6 +21,7 @@ const adminDropdown = [
   { id: "sectionManagement", label: "Section Management", path: "/admin/section-management" },
   { id: "subjectManagement", label: "Subject Management", path: "/admin/subject-management" },
   { id: "teacherManagement", label: "Teacher Management", path: "/admin/teacher-management" },
+  { id: "studentReport", label: "Student Report", path: "/admin/student-report" },
   { id: "attendance1", label: "Attendance1", path: "/admin/attendance1" },
   { id: "attendance2", label: "Attendance2", path: "/admin/attendance2" },
 ];

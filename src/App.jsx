@@ -30,6 +30,8 @@ const AcademicsPage = lazy(() => import("./Pages/AcademicsPage/index.jsx"));
 const AllStudent = lazy(() => import("./Pages/Students/AllStudent.jsx"));
 const AddEnrollmentInfo = lazy(() => import("./Pages/Students/AddEnrollmentInfo.jsx"));
 const ViewStudent = lazy(() => import("./Pages/Students/ViewStudent.jsx"));
+const StudentReport = lazy(() => import("./Pages/StudentReport/index.jsx"));
+const AccountsOfficePage = lazy(() => import("./Pages/AccountsOfficePage/index.jsx"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -95,6 +97,11 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
+          <Route path="/admin/student-report" element={<StudentReport />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
           <Route
             path="/admin/teacher-management"
             element={<TeacherManagementPage />}
@@ -123,7 +130,12 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/academics/students" element={<AcademicsPage />} />
+          <Route path="/accounts-office" element={<AccountsOfficePage />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/all-students" element={<AllStudent />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
@@ -148,6 +160,6 @@ function App() {
       </Suspense>
     </BrowserRouter>
   );
-}
+}  
 
 export default App;
