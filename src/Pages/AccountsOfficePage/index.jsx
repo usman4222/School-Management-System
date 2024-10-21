@@ -4,7 +4,10 @@ import Layout from "../../Components/Layout";
 import { HiDownload } from "react-icons/hi";
 import { RiAiGenerate } from "react-icons/ri";
 import Button from "../../Components/Button";
-import ClassFeeTable from "../../Components/Tables/ClassFeeTable";
+import ClassFeeTable from "../../Components/Tables/FeeTables";
+import FeeChallanGenerationTable from "../../Components/Tables/AccountsOfficeTables/ClassFeeTables/FeeChallanGenerationTable";
+import ManageClassFeeTable from "../../Components/Tables/AccountsOfficeTables/ClassFeeTables/ManageClassFeeTable";
+import FeeTables from "../../Components/Tables/FeeTables";
 
 const index = () => {
   return (
@@ -13,7 +16,7 @@ const index = () => {
         <Heading page={"Accounts office"} />
         <div className="flex justify-between mb-5">
           <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 mt-5">
-          Fee Structure
+            Fee Structure
           </h2>
           <div className="flex gap-3">
             {/* <div>
@@ -39,9 +42,9 @@ const index = () => {
             <Button text={"Generate Report"} btnImg={<RiAiGenerate />} /> */}
           </div>
         </div>
-      </div>
-      <div className="px-5 bg-[#f5f5fa]">
-        <ClassFeeTable />
+        <div>
+          <FeeTables />
+        </div>
       </div>
     </Layout>
   );

@@ -53,7 +53,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   };
 
   return (
-    <aside className={`${isOpen ? "w-64" : "w-20"} border-r border-[#E2E8F0] bg-[#ffffff] pr-3 transition-all duration-300 ease-in-out`}>
+    <aside className={`${isOpen ? "w-64" : "w-20"}  border-r border-[#E2E8F0] bg-[#ffffff] pr-3 transition-all duration-300 ease-in-out`}>
       <div className="flex justify-between items-center pt-[21px] pl-[18.67px] mb-8">
         {isOpen && <div><img src={logo} alt="logo" className="h-[64px]" /></div>}
         <button onClick={toggleSidebar}>
