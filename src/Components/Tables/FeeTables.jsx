@@ -4,8 +4,8 @@ import Button from "../Button";
 import { FaPlus, FaPrint } from "react-icons/fa6";
 import ClassFeeTableComponent from "./AccountsOfficeTables/ClassFeeTables/ManageClassFeeTable";
 import HostelFeeTable from "./AccountsOfficeTables/HostelFeeTables/HostelFeeTable";
-import TransportFeeTable from "./AccountsOfficeTables/TransportFeeTables/TransportFeeTable";
 import ManageClassFeeTable from "./AccountsOfficeTables/ClassFeeTables/ManageClassFeeTable";
+import RoutesTable from "./AccountsOfficeTables/TransportFeeTables/RoutesTable";
 
 const FeeTables = () => {
   const [selectedTable, setSelectedTable] = useState("Class Fee"); // Track the selected table
@@ -22,7 +22,9 @@ const FeeTables = () => {
           <h2
             onClick={() => handleTableSelection("Class Fee")}
             className={` font-inter text-[20px] font-semibold leading-[24.2px] text-left cursor-pointer  pl-[13px] pb-[25px] pr-[40px] ${
-              selectedTable === "Class Fee" ? "border-b-2 border-[#1A55A5] text-[#1A55A5]" : "text-[#3B424A]"
+              selectedTable === "Class Fee"
+                ? "border-b-2 border-[#1A55A5] text-[#1A55A5]"
+                : "text-[#3B424A]"
             }`}
           >
             Class Fee
@@ -30,7 +32,9 @@ const FeeTables = () => {
           <h2
             onClick={() => handleTableSelection("Transport Fee")}
             className={` font-inter text-[20px] font-semibold leading-[24.2px] text-left cursor-pointer  pb-[25px] pr-[40px] ${
-              selectedTable === "Transport Fee" ? "border-b-2 border-[#1A55A5] text-[#1A55A5]" : "text-[#3B424A]"
+              selectedTable === "Transport Fee"
+                ? "border-b-2 border-[#1A55A5] text-[#1A55A5]"
+                : "text-[#3B424A]"
             }`}
           >
             Transport Fee
@@ -38,7 +42,9 @@ const FeeTables = () => {
           <h2
             onClick={() => handleTableSelection("Hostel Fee")}
             className={` font-inter text-[20px] font-semibold leading-[24.2px] text-left cursor-pointer  pb-[25px] pr-[40px] ${
-              selectedTable === "Hostel Fee" ? "border-b-2 border-[#1A55A5] text-[#1A55A5]" : "text-[#3B424A]"
+              selectedTable === "Hostel Fee"
+                ? "border-b-2 border-[#1A55A5] text-[#1A55A5]"
+                : "text-[#3B424A]"
             }`}
           >
             Hostel Fee
@@ -48,8 +54,8 @@ const FeeTables = () => {
         {/* Conditionally render the selected table */}
         <div className="">
           {selectedTable === "Class Fee" && <ManageClassFeeTable />}
-          {/* {selectedTable === "Transport Fee" && <TransportFeeTable />}
-          {selectedTable === "Hostel Fee" && <HostelFeeTable />} */}
+          {selectedTable === "Transport Fee" && <RoutesTable />}
+          {selectedTable === "Hostel Fee" && <HostelFeeTable />} 
         </div>
       </div>
     </div>
