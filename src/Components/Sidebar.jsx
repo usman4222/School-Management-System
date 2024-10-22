@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 const navItems = [
   { id: "dashboard", label: "Dashboard", path: "/", icon: graph },
   { id: "admin", label: "Admin", icon: admin },
-  { id: "admission", label: "Admission", path: "/admission", icon: admission },
   {
     id: "enrollment",
     label: "Enrolment Form",
@@ -81,24 +80,26 @@ const accountsOfficeDropdown = [
 ];
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
-  const [activeNav, setActiveNav] = useState("dashboard");
+  const [activeNav, setActiveNav] = useState("dashboard"); 
+  const [activeSubNav, setActiveSubNav] = useState(null); 
   const [dropdownState, setDropdownState] = useState({
     admin: false,
     academics: false,
+    accountsOffice: false,
   });
   const [selectedClass, setSelectedClass] = useState(null);
 
   const handleNavClick = (id) => {
     setActiveNav(id);
-
+    setActiveSubNav(null);  // Reset sub-link when selecting a main nav item
     setDropdownState((prevState) => ({
       ...prevState,
-      [id]: !prevState[id],
+      [id]: !prevState[id],  // Toggle dropdown for clicked main nav item
     }));
   };
 
-  const handleClassSelect = (classId) => {
-    setSelectedClass(classId);
+  const handleSubNavClick = (subId) => {
+    setActiveSubNav(subId);  // Highlight selected sub-link
   };
 
   return (
@@ -123,7 +124,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <Link to={path}>
               <nav
                 className={`pl-[14px] py-[14px] gap-4 rounded-[9px] flex cursor-pointer ${
-                  activeNav === id
+                  activeNav === id && !activeSubNav
                     ? "bg-gradient-to-r from-[#1A55A5] to-[#003F94]"
                     : "bg-white"
                 }`}
@@ -163,11 +164,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                   <Link
                     to={path}
                     key={id}
-                    onClick={() => {
-                      handleClassSelect(id);
-                      setDropdownState({ ...dropdownState, admin: false });
-                    }}
-                    className={`${selectedClass === id ? "bg-[#F3F6FA]" : ""}`}
+                    onClick={() => handleSubNavClick(id)}
+                    className={`${activeSubNav === id ? "bg-[#F3F6FA]" : ""}`}
                   >
                     <div className="text-[#3B424A] text-[14px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 hover:bg-[#F3F6FA] rounded-[6px]">
                       {label}
@@ -186,7 +184,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                       handleClassSelect(id);
                       setDropdownState({ ...dropdownState, academics: false });
                     }}
-                    className={`${selectedClass === id ? "bg-[#F3F6FA]" : ""}`}
+                    className={`${activeSubNav === id ? "bg-[#F3F6FA]" : ""}`}
                   >
                     <div className="text-[#3B424A] text-[14px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 hover:bg-[#F3F6FA] rounded-[6px]">
                       {label}
@@ -208,7 +206,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                         accountsOffice: false,
                       });
                     }}
-                    className={`${selectedClass === id ? "bg-[#F3F6FA]" : ""}`}
+                    className={`${activeSubNav === id ? "bg-[#F3F6FA]" : ""}`}
                   >
                     <div className="text-[#3B424A] text-[14px] py-[10px] px-[14px] cursor-pointer transition-all duration-300 hover:bg-[#F3F6FA] rounded-[6px]">
                       {label}
