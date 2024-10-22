@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../../Layout";
 import Heading from "../../../Heading";
 
 const FeeCollectionTable = () => {
+  const [selected, setSelected] = useState(false);
+
+  const handleToggle = () => {
+    setSelected((prevSelected) => !prevSelected); // Toggle between selected and not selected
+  };
+
   return (
     <Layout>
       <div className="p-5 bg-[#f5f5fa]">
@@ -35,7 +41,7 @@ const FeeCollectionTable = () => {
           <h3 className="font-montserrat text-[22px] font-bold leading-[22px] text-left text-[#4D515A] mt-20 pb-10">
             Challan Form
           </h3>
-          <div>
+          <div className="flex justify-center  w-full items-center gap-10">
             <div className="border border-[#000000]">
               <div className="flex justify-end mt-5 px-5">
                 <div className="flex justify-between w-1/2">
@@ -48,7 +54,9 @@ const FeeCollectionTable = () => {
                 </div>
               </div>
               <div className="flex justify-end px-5">
-                <h4 className="font-arial text-[16px] font-bold leading-[24px] text-left underline mt-3">Year: 2024</h4>
+                <h4 className="font-arial text-[16px] font-bold leading-[24px] text-left underline mt-3">
+                  Year: 2024
+                </h4>
               </div>
               <div className="px-5">
                 <h4 className="font-arial text-[16px] font-bold leading-[24px] text-left mt-1">
@@ -187,6 +195,132 @@ const FeeCollectionTable = () => {
                 <h6 className="font-arial text-[14px] font-normal leading-[24px] text-left mt-5 mb-5">
                   (Twelve Thousand Only)
                 </h6>
+              </div>
+            </div>
+            <div className="flex bg-[#D0CFCF]">
+              <div>
+                <div className={" rounded-lg p-4 "}>
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={selected}
+                      onChange={handleToggle}
+                      className="mr-4 accent-[#CBCBCB]"
+                    />
+                    <h4
+                      className={`font-montserrat text-[14px] font-semibold leading-[22px] text-left uppercase ${
+                        selected ? "text-[#4D515A]" : "text-[#A6A6A6]"
+                      }`}
+                    >
+                      Partially Paid
+                    </h4>
+                  </div>
+                  <div
+                    className={`bg-[#FFFFFF] border rounded-[9px] mt-2 ${
+                      selected
+                        ? "bg-[#fff] border-[#7C7C7C]"
+                        : " bg-[#EAEAEA] border-none"
+                    }`}
+                  >
+                    <h2
+                      className={`font-montserrat text-[14px] font-medium leading-[17.07px] text-center p-5 text-black`}
+                    >
+                      500
+                    </h2>
+                  </div>
+                </div>
+                <div className={" rounded-lg p-4 "}>
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={selected}
+                      onChange={handleToggle}
+                      className="mr-4 accent-[#CBCBCB]"
+                    />
+                    <h4
+                      className={`font-montserrat text-[14px] font-semibold leading-[22px] text-left uppercase ${
+                        selected ? "text-[#4D515A]" : "text-[#A6A6A6]"
+                      }`}
+                    >
+                      Partially Paid
+                    </h4>
+                  </div>
+                  <div
+                    className={`bg-[#FFFFFF] border rounded-[9px] mt-2 ${
+                      selected
+                        ? "bg-[#fff] border-[#7C7C7C]"
+                        : " bg-[#EAEAEA] border-none"
+                    }`}
+                  >
+                    <h2
+                      className={`font-montserrat text-[14px] font-medium leading-[17.07px] text-center p-5 text-black`}
+                    >
+                      500
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className={" rounded-lg p-4 "}>
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={selected}
+                      onChange={handleToggle}
+                      className="mr-4 accent-[#CBCBCB]"
+                    />
+                    <h4
+                      className={`font-montserrat text-[14px] font-semibold leading-[22px] text-left uppercase ${
+                        selected ? "text-[#4D515A]" : "text-[#A6A6A6]"
+                      }`}
+                    >
+                      Fully Paid
+                    </h4>
+                  </div>
+                  <div
+                    className={`bg-[#FFFFFF] border rounded-[9px] mt-2 ${
+                      selected
+                        ? "bg-[#1D76FF]"
+                        : " bg-[#90B9FA]"
+                    }`}
+                  >
+                    <h2
+                      className={`font-montserrat text-[14px] font-medium leading-[17.07px] text-center p-3 ${selected ? "text-white" : "text-[#E8E8E8]"}`}
+                    >
+                      Full Amount has been paid
+                    </h2>
+                  </div>
+                </div>
+                <div className={" rounded-lg p-4"}>
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={selected}
+                      onChange={handleToggle}
+                      className="mr-4 accent-[#CBCBCB]"
+                    />
+                    <h4
+                      className={`font-montserrat text-[14px] font-semibold leading-[22px] text-left uppercase ${
+                        selected ? "text-[#4D515A]" : "text-[#A6A6A6]"
+                      }`}
+                    >
+                     Fully Paid
+                    </h4>
+                  </div>
+                  <div
+                    className={`bg-[#FFFFFF] border rounded-[9px] mt-2 ${
+                      selected
+                        ? "bg-[#1D76FF]"
+                        : " bg-[#90B9FA]"
+                    }`}
+                  >
+                    <h2
+                      className={`font-montserrat text-[14px] font-medium leading-[17.07px] text-center p-5 ${selected ? "text-white" : "text-[#E8E8E8]"}`}
+                    >
+                      Full Amount has been paid
+                    </h2>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
