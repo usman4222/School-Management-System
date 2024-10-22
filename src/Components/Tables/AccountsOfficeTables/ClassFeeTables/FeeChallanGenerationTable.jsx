@@ -7,7 +7,6 @@ import { RiAiGenerate } from "react-icons/ri";
 import Button from "../../../Button";
 import CheckboxComponent from "../../../CheckboxComponent";
 import FeeBox from "../../../FeeBox";
-import FeePrintSlip from "../../../FeePrintSlip";
 import { FaPrint } from "react-icons/fa6";
 
 const FeeChallanGenerationTable = () => {
