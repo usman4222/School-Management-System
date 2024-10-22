@@ -8,6 +8,8 @@ import Button from "../../Components/Button";
 import TableComponent from "../../Components/Tables/TableComponent";
 import { Link } from "react-router-dom";
 import TimeTableModal from "../../Components/Modals/TimeTableModal";
+import { FaPlus, FaPrint } from "react-icons/fa6";
+import { FiPrinter } from "react-icons/fi";
 
 const SubjectManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -110,9 +112,9 @@ const SubjectManagementPage = () => {
             Subject Management
           </h2>
           <div className="flex gap-3">
-            <Button text={"Print"} btnImg={print} />
+            <Button text={"Print"} btnImg={<FiPrinter/>} />
             <Link to="/admin/add-subject">
-              <Button text={"Add Subject"} btnImg={plus} />
+              <Button text={"Add Subject"} btnImg={<FaPlus/>} />
             </Link>
           </div>
         </div>

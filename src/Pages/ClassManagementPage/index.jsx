@@ -8,6 +8,9 @@ import Button from "../../Components/Button";
 import TableComponent from "../../Components/Tables/TableComponent";
 import AddFormModal from "../../Components/Modals/AddFormModal";
 import DeleteConfirmationModal from "../../Components/Modals/DeleteConfirmationModal";
+import { FaPrint } from "react-icons/fa";
+import { FiPrinter } from "react-icons/fi";
+import { FaPlus } from "react-icons/fa6";
 
 const ClassManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -148,8 +151,9 @@ const ClassManagementPage = () => {
             Class Management
           </h2>
           <div className="flex gap-3">
-            <Button text={"Print"} btnImg={print} />
-            <Button text={"Add Class"} btnImg={plus} onClick={openModal} />
+            {/* <Button text={"Print"} {<FaPrint/>} /> */}
+            <Button text={"Print"} btnImg={<FiPrinter />} />
+            <Button text={"Add Class"} btnImg={<FaPlus />} onClick={openModal} />
           </div>
         </div>
 

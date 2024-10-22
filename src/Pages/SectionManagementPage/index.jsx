@@ -8,6 +8,8 @@ import Button from "../../Components/Button";
 import TableComponent from "../../Components/Tables/TableComponent";
 import AddFormModal from "../../Components/Modals/AddFormModal";
 import AddSectionFormModal from "../../Components/Modals/AddSectionFormModal";
+import { FaPrint } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
 
 const SectionManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -91,8 +93,8 @@ const SectionManagementPage = () => {
             Section Management
           </h2>
           <div className="flex gap-3">
-            <Button text={"Print"} btnImg={print} />
-            <Button text={"Add Section"} btnImg={plus} onClick={openModal} />
+            <Button text={"Print"} btnImg={<FaPrint/>} />
+            <Button text={"Add Section"} btnImg={<FaPlus />} onClick={openModal} />
           </div>
         </div>
 

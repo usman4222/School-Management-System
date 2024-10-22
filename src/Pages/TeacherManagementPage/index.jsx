@@ -10,6 +10,7 @@ import AddFormModal from "../../Components/Modals/AddFormModal";
 import DeleteConfirmationModal from "../../Components/Modals/DeleteConfirmationModal";
 import eye from "../../assets/svg/eye.svg";
 import { Link } from "react-router-dom";
+import { FaPlus } from "react-icons/fa6";
 
 const ClassManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -114,7 +115,7 @@ const ClassManagementPage = () => {
           </div>
           <div className="flex gap-3">
             <Link to="/admin/add-teacher">
-              <Button text={"Add Teacher"} btnImg={plus} />
+              <Button text={"Add Teacher"} btnImg={<FaPlus/>} />
             </Link>
           </div>
         </div>
