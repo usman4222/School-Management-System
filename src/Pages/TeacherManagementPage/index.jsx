@@ -8,7 +8,6 @@ import Button from "../../Components/Button";
 import TableComponent from "../../Components/Tables/TableComponent";
 import AddFormModal from "../../Components/Modals/AddFormModal";
 import DeleteConfirmationModal from "../../Components/Modals/DeleteConfirmationModal";
-import threeDotsIcon from "../../assets/svg/threeDots.svg";
 import eye from "../../assets/svg/eye.svg";
 import { Link } from "react-router-dom";
 
