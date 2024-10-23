@@ -22,7 +22,12 @@ const navItems = [
     path: "/all-students",
     icon: admission,
   },
-  // { id: "accountsOffice", label: "Accounts Office", path: "/accounts-office", icon: admission },
+  {
+    id: "exam",
+    label: "Exams  Department",
+    path: "/exam-department",
+    icon: admission,
+  },
   { id: "accountsOffice", label: "Accounts Office", icon: admission },
 ];
 
@@ -80,26 +85,25 @@ const accountsOfficeDropdown = [
 ];
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
-  const [activeNav, setActiveNav] = useState("dashboard"); 
-  const [activeSubNav, setActiveSubNav] = useState(null); 
+  const [activeNav, setActiveNav] = useState("dashboard");
+  const [activeSubNav, setActiveSubNav] = useState(null);
   const [dropdownState, setDropdownState] = useState({
     admin: false,
     academics: false,
     accountsOffice: false,
   });
-  const [selectedClass, setSelectedClass] = useState(null);
 
   const handleNavClick = (id) => {
     setActiveNav(id);
-    setActiveSubNav(null);  // Reset sub-link when selecting a main nav item
+    setActiveSubNav(null);
     setDropdownState((prevState) => ({
       ...prevState,
-      [id]: !prevState[id],  // Toggle dropdown for clicked main nav item
+      [id]: !prevState[id],
     }));
   };
 
   const handleSubNavClick = (subId) => {
-    setActiveSubNav(subId);  // Highlight selected sub-link
+    setActiveSubNav(subId);
   };
 
   return (

@@ -31,9 +31,10 @@ const AllStudent = lazy(() => import("./Pages/Students/AllStudent.jsx"));
 const AddEnrollmentInfo = lazy(() => import("./Pages/Students/AddEnrollmentInfo.jsx"));
 const ViewStudent = lazy(() => import("./Pages/Students/ViewStudent.jsx"));
 const StudentReport = lazy(() => import("./Pages/StudentReport/index.jsx"));
-const AccountsOfficePage = lazy(() => import("./Pages/AccountsOfficePage/index.jsx"));
+const AccountsOfficePage = lazy(() => import("./Pages/AccountsOfficePage/index.jsx"));   
 const FeeCollectionTable = lazy(() => import("./Components/Tables/AccountsOfficeTables/FeeCollectionTable/index.jsx"));
 const ReportTable = lazy(() => import("./Components/Tables/AccountsOfficeTables/ReportTable/index.jsx"));
+const ExamDepartment = lazy(() => import("./Pages/ExamDepartment/index.jsx"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -105,6 +106,11 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/academics/students" element={<AcademicsPage />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/exam-department" element={<ExamDepartment />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>

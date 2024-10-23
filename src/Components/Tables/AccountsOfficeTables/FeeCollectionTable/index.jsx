@@ -315,7 +315,7 @@ const FeeCollectionTable = () => {
                     }`}
                   >
                     <h2
-                      className={`font-montserrat text-[14px] font-medium leading-[17.07px] text-center p-5 ${selected ? "text-white" : "text-[#E8E8E8]"}`}
+                      className={`font-montserrat text-[14px] font-medium leading-[17.07px] text-center p-3 ${selected ? "text-white" : "text-[#E8E8E8]"}`}
                     >
                       Full Amount has been paid
                     </h2>
