@@ -214,77 +214,11 @@ const ClassManagementPage = () => {
                   onClick={() => handleDropdownToggle(index)}
                   className="cursor-pointer"
                 />
-                {/* {dropdownVisible === index && (
-                  <div className="absolute left-0 top-0 ml-4  shadow-lg rounded-md z-10">
-                    <div className="flex flex-col items-start gap-[10px] self-stretch">
-                      <button
-                        className=" p-[5px_18px] text-sm text-gray-700"
-                        onClick={() => handleEdit(item)}
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className=" p-[5px_18px] text-sm text-gray-700 mr-2"
-                        onClick={() => handleDelete(item.id)}
-                      >
-                        Del
-                      </button>
-                    </div>
-                  </div>
-                )} */}
               </div>
             </div>
           ))}
-
-          <div className="flex justify-end gap-3 px-5 h-[72px] bg-[#F8FAFC]">
-            <div className="flex items-center gap-5 text-[#64748B]">
-              <span className="font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
-                {currentRangeStart}-{currentRangeEnd} of {totalRows}
-              </span>
-              <span className="font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
-                Rows per page: 10
-              </span>
-            </div>
-            <div className="flex gap-[4px] items-center">
-              <button
-                onClick={handlePreviousPage}
-                disabled={currentPage === 1}
-                className={`px-4 py-2 font-montserrat text-sm font-medium leading-[17.07px] rounded-[9px] text-[14px] border-[#E2E8F0] border ${
-                  currentPage === 1
-                    ? "bg-[#F1F2F4] text-[#B4BFCD]"
-                    : "bg-[#F8FAFC] text-[#1A55A5]"
-                }`}
-              >
-                Previous
-              </button>
-              <button
-                onClick={handleNextPage}
-                disabled={currentPage === totalPages}
-                className={`px-4 py-2 font-montserrat text-sm font-medium leading-[17.07px] rounded-[9px] text-[14px] border-[#E2E8F0] border ${
-                  currentPage === totalPages
-                    ? "bg-[#F1F2F4] text-[#B4BFCD]"
-                    : "bg-[#F8FAFC] text-[#1A55A5]"
-                }`}
-              >
-                Next
-              </button>
-            </div>
-          </div>
         </div>
       </div>
-
-      {/* {isModalOpen && (
-        <AddFormModal
-          isOpen={isModalOpen}
-          closeModal={closeModal}
-        />
-      )}
-        {isDelConfirmationModalOpen && (
-        <DeleteConfirmationModal
-          isOpen={isDelConfirmationModalOpen}
-          closeModal={closeDelConfirmationModal}
-        />
-      )} */}
     </Layout>
   );
 };

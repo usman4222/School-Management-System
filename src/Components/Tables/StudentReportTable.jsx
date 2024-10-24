@@ -92,7 +92,6 @@ const StudentReportTable = () => {
       result: "40,000",
       action: "Detail View",
     },
-
   ];
 
   const indexOfLastRow = currentPage * rowsPerPage;
@@ -113,43 +112,54 @@ const StudentReportTable = () => {
   };
 
   return (
-    <div className="h-[100vh]">
-      {/* Table Header */}
-      <div className="bg-[#F8FAFC] pt-5 rounded-[12px] ">
-        <div className="w-full flex items-center py-2 px-6 bg-[#F8FAFC] pt-4">
-          {columns.map((column, index) => (
-            <div key={index} className="flex uppercase gap-3 items-center w-[376px]">
-              <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                {column.label}
-              </h6>
-              <img src={updown} alt="arrow" />
-            </div>
-          ))}
-        </div>
+    <div className="h-[100vh] ">
+      <div className="bg-[#F8FAFC] pt-5 rounded-[12px]  overflow-x-auto">
+        <table className="min-w-full">
+          <thead>
+            <tr className="w-full flex items-center py-2 px-6 bg-[#F8FAFC] pt-4">
+              {columns.map((column, index) => (
+                <th
+                  key={index}
+                  className="flex uppercase gap-3 items-center w-[376px] text-left"
+                >
+                  <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                    {column.label}
+                  </h6>
+                  <img src={updown} alt="arrow" />
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {currentRows.map((item) => (
+              <tr
+                key={item.id}
+                className="w-full flex items-center h-[58px] py-2 px-6 bg-[#F8FAFC]"
+              >
+                <td className="flex items-center w-[376px] gap-3">
+                  <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                    {item[columns[0].key]}
+                  </h6>
+                </td>
+                {columns.slice(1).map((column, colIndex) => (
+                  <td
+                    key={colIndex}
+                    className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[376px] text-left"
+                  >
+                    {column.key === "action" ? (
+                      <span className="text-[#1464DF] cursor-pointer">
+                        {item[column.key]}
+                      </span>
+                    ) : (
+                      item[column.key]
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-
-      {/* Table Rows */}
-      {currentRows.map((item) => (
-        <div key={item.id} className="w-full flex items-center h-[58px] py-2 px-6 bg-[#F8FAFC]">
-          <div className="flex items-center w-[376px] gap-3">
-            <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-              {item[columns[0].key]}
-            </h6>
-          </div>
-          {columns.slice(1).map((column, colIndex) => (
-            <h6
-              key={colIndex}
-              className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[376px] text-left"
-            >
-              {column.key === "action" ? (
-                <span className="text-[#1464DF] cursor-pointer">{item[column.key]}</span>
-              ) : (
-                item[column.key]
-              )}
-            </h6>
-          ))}
-        </div>
-      ))}
 
       <TablePagination
         currentPage={currentPage}

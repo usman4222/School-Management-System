@@ -11,6 +11,7 @@ import DeleteConfirmationModal from "../../Components/Modals/DeleteConfirmationM
 import { FaPrint } from "react-icons/fa";
 import { FiPrinter } from "react-icons/fi";
 import { FaPlus } from "react-icons/fa6";
+import Table from "../../Components/Table";
 
 const ClassManagementPage = () => {
   const [selectedRow, setSelectedRow] = useState(null);
@@ -146,14 +147,17 @@ const ClassManagementPage = () => {
     <Layout>
       <div className="p-5 bg-[#f5f5fa]">
         <Heading page={"Class Management"} />
-        <div className="flex justify-between mb-5">
-          <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 mt-5">
+        <div className="flex flex-wrap justify-between  items-center">
+          <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 my-5">
             Class Management
           </h2>
-          <div className="flex gap-3">
-            {/* <Button text={"Print"} {<FaPrint/>} /> */}
+          <div className="flex gap-3 my-5">
             <Button text={"Print"} btnImg={<FiPrinter />} />
-            <Button text={"Add Class"} btnImg={<FaPlus />} onClick={openModal} />
+            <Button
+              text={"Add Class"}
+              btnImg={<FaPlus />}
+              onClick={openModal}
+            />
           </div>
         </div>
 
@@ -186,7 +190,6 @@ const ClassManagementPage = () => {
         <DeleteConfirmationModal
           isOpen={isDelConfirmationModalOpen}
           closeModal={closeDelConfirmationModal}
-          
         />
       )}
     </Layout>

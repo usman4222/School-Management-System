@@ -35,6 +35,7 @@ const AccountsOfficePage = lazy(() => import("./Pages/AccountsOfficePage/index.j
 const FeeCollectionTable = lazy(() => import("./Components/Tables/AccountsOfficeTables/FeeCollectionTable/index.jsx"));
 const ReportTable = lazy(() => import("./Components/Tables/AccountsOfficeTables/ReportTable/index.jsx"));
 const ExamDepartment = lazy(() => import("./Pages/ExamDepartment/index.jsx"));
+const AddResult = lazy(() => import("./Pages/ExamDepartment/AddResult.jsx"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -159,6 +160,11 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/all-students" element={<AllStudent />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/add-result" element={<AddResult />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>

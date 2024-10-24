@@ -12,10 +12,10 @@ const TablePagination = ({
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
   const currentRangeStart = indexOfFirstRow + 1;
   const currentRangeEnd = Math.min(indexOfLastRow, totalRows);
-
+  // bg-[#F8FAFC]
   return (
-    <div className="flex justify-end gap-3 px-5 h-[72px] bg-[#F8FAFC]">
-      <div className="flex items-center gap-5 text-[#64748B]">
+    <div className="flex justify-center md:justify-end flex-wrap gap-3  h-[72px] bg-[#F8FAFC] ">
+      <div className="flex items-center gap-5 text-[#64748B] py-2">
         <span className="font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
           {currentRangeStart}-{currentRangeEnd} of {totalRows}
         </span>
@@ -23,7 +23,7 @@ const TablePagination = ({
           Rows per page: {rowsPerPage}
         </span>
       </div>
-      <div className="flex gap-[4px] items-center">
+      <div className="flex gap-[4px] items-center py-2">
         <button
           onClick={onPreviousPage}
           disabled={currentPage === 1}

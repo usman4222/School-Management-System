@@ -88,11 +88,11 @@ const SectionManagementPage = () => {
     <Layout>
       <div className="p-5 bg-[#f5f5fa]">
         <Heading page={"Section Management"} />
-        <div className="flex justify-between mb-5">
-          <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 mt-5">
+        <div className="flex justify-between items-center flex-wrap ">
+          <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6  my-5">
             Section Management
           </h2>
-          <div className="flex gap-3">
+          <div className="flex gap-3 my-5">
             <Button text={"Print"} btnImg={<FaPrint/>} />
             <Button text={"Add Section"} btnImg={<FaPlus />} onClick={openModal} />
           </div>

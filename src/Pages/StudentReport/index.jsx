@@ -15,11 +15,11 @@ const index = () => {
     <Layout>
       <div className="p-5 bg-[#f5f5fa]">
         <Heading page={"Students"} />
-        <div className="flex justify-between mb-5">
-          <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 mt-5">
+        <div className="flex justify-between items-center flex-wrap">
+          <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 my-5 ">
             Student Report
           </h2>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-wrap my-5">
             <div>
               <button className="flex items-center p-[10px] px-[8px] py-[10px] gap-[4px] rounded-[9px] bg-[#FFFFFF] border border-[#E2E8F0]">
                 <span className="text-[#64748B]">

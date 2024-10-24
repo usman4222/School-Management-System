@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 .custom-gradient {
   background: linear-gradient(90.6deg, #1A55A5 46.33%, #003F94 99.99%);
-}
-
-
-
-
-/* .font-montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-} */
-.custom-gradient {
-  background: linear-gradient(90.6deg, #1A55A5 46.33%, #003F94 99.99%);
+  color: #fff;
 }

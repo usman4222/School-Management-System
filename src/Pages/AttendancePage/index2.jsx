@@ -32,25 +32,25 @@ const index2 = () => {
       Remarks: "John",
     },
     {
-        SrNo: "#132548",
-        RegNo: "#132548",
-        Student: "Hamid Nawaz",
-        FatherName: "John",
-        OnLeave: "2",
-        Present: "2",
-        Absent: "2",
-        Remarks: "John",
-      },
-      {
-        SrNo: "#132548",
-        RegNo: "#132548",
-        Student: "Hamid Nawaz",
-        FatherName: "John",
-        OnLeave: "2",
-        Present: "2",
-        Absent: "2",
-        Remarks: "John",
-      },
+      SrNo: "#132548",
+      RegNo: "#132548",
+      Student: "Hamid Nawaz",
+      FatherName: "John",
+      OnLeave: "2",
+      Present: "2",
+      Absent: "2",
+      Remarks: "John",
+    },
+    {
+      SrNo: "#132548",
+      RegNo: "#132548",
+      Student: "Hamid Nawaz",
+      FatherName: "John",
+      OnLeave: "2",
+      Present: "2",
+      Absent: "2",
+      Remarks: "John",
+    },
 
     // ... Repeat for other rows as needed
   ];
@@ -80,13 +80,13 @@ const index2 = () => {
     <Layout>
       <div className="p-5 bg-[#f5f5fa]">
         <Heading page={"Add Attendance"} />
-        <div className="flex justify-between mb-5">
-          <div className="flex items-center mt-5">
+        <div className="flex justify-between items-center flex-wrap">
+          <div className="flex items-center flex-wrap my-5">
             <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 mr-[10px]">
               Add Attendance
             </h2>
-            <div className="mr-[20px]">
-              <select className="flex w-[416px] h-[44px] px-[15.94px] py-[9.94px] justify-center items-start gap-[4.005px] flex-shrink-0 rounded border border-[#B5BDC5] bg-[#FFF]">
+            <div className="mr-[20px] my-5">
+              <select className="flex w-fit h-[44px] px-[15.94px] py-[9.94px] justify-center items-start gap-[4.005px] flex-shrink-0 rounded border border-[#B5BDC5] bg-[#FFF]">
                 <option value="">Select an option</option>
                 <option value="option1">Option 1</option>
                 <option value="option2">Option 2</option>
@@ -95,7 +95,7 @@ const index2 = () => {
             <div>
               <input
                 type="date"
-                className="flex w-[416px] h-[44px] px-[15.94px] py-[9.94px] justify-center items-start gap-[4.005px] flex-shrink-0 rounded border border-[#B5BDC5] bg-[#FFF]"
+                className="flex w-fit h-[44px] px-[15.94px] py-[9.94px] justify-center items-start gap-[4.005px] flex-shrink-0 rounded border border-[#B5BDC5] bg-[#FFF]"
               />
             </div>
           </div>
@@ -225,8 +225,6 @@ const index2 = () => {
                       <input
                         type="checkbox"
                         className="mr-2  w-[24px] h-[24px]"
-                        // checked={checkedRows.includes(index)}
-                        // onChange={() => handleRowCheckboxChange(index)}
                       />
                     </div>
                   ) : colIndex === 4 ? (
@@ -234,8 +232,6 @@ const index2 = () => {
                       <input
                         type="checkbox"
                         className="mr-2 w-[24px] h-[24px]"
-                        // checked={checkedRows.includes(index)}
-                        // onChange={() => handleRowCheckboxChange(index)}
                       />
                     </div>
                   ) : colIndex === 5 ? (
@@ -243,8 +239,6 @@ const index2 = () => {
                       <input
                         type="checkbox"
                         className="mr-2  w-[24px] h-[24px]"
-                        // checked={checkedRows.includes(index)}
-                        // onChange={() => handleRowCheckboxChange(index)}
                       />
                     </div>
                   ) : colIndex === 6 ? (
