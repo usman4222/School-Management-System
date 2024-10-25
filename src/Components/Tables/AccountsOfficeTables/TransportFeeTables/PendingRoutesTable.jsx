@@ -37,11 +37,11 @@ const PendingRoutesTable = () => {
     <>
       <div className="h-auto mb-20  bg-white rounded-b-[12px] pt-5">
         <div className="  rounded-[12px ">
-          <div className="flex justify-between mb-5 px-6 ">
-            <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 ">
-            Pending Routes
+          <div className="flex justify-between flex-wrap  px-6 ">
+            <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 my-5">
+              Pending Routes
             </h2>
-            <div className="flex gap-3 ">
+            <div className="flex gap-3 my-5 ">
               <div>
                 <button className="flex items-center p-[10px] px-[8px] py-[10px] gap-[4px] rounded-[9px] bg-[#6A95D7] border border-[#E2E8F0]">
                   <span className="text-[#fff]">
@@ -54,45 +54,46 @@ const PendingRoutesTable = () => {
               </div>
             </div>
           </div>
-          <div className=" ">
-            <div className="w-full flex items-center py-2 ">
-              {columns.map((column, index) => (
-                <div
-                  key={index}
-                  className="flex uppercase gap-3 items-center w-full pl-6  "
-                >
-                  <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                    {column.label}
-                  </h6>
-                </div>
-              ))}
-            </div>
-            {currentRows.map((item) => (
-              <div
-                key={item.id}
-                className="w-full flex items-center h-[58px] py-2 "
-              >
-                <div className="flex items-center w-full pl-6 gap-3 ">
-                  <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                    {item[columns[0].key]}
-                  </h6>
-                </div>
-                {columns.slice(1).map((column, colIndex) => (
-                  <h6
-                    key={colIndex}
-                    className="text-[#4D515A] pl-6 font-montserrat text-sm font-semibold leading-[22px] w-full text-left"
-                  >
-                    {column.key === "action" ? (
-                      <span className="text-[#1464DF] cursor-pointer">
-                        {item[column.key]}
-                      </span>
-                    ) : (
-                      item[column.key]
-                    )}
-                  </h6>
+          <div className="h-auto overflow-x-auto">
+            <table className=" bg-[#F8FAFC] rounded-[12px] ">
+              <thead>
+                <tr className="py-2 flex">
+                  {columns.map((column, index) => (
+                    <th
+                      key={index}
+                      className="w-[172px] uppercase gap-3 pl-6 py-4 text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] text-left"
+                    >
+                      {column.label}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+
+              <tbody>
+                {currentRows.map((item) => (
+                  <tr key={item.id} className="h-[58px] flex py-2">
+                    <td className="w-[172px] pl-6 py-4 text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                      {item[columns[0].key]}
+                    </td>
+
+                    {columns.slice(1).map((column, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="w-[172px] pl-6 text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] text-left py-4"
+                      >
+                        {column.key === "action" ? (
+                          <span className="text-[#1464DF] cursor-pointer">
+                            {item[column.key]}
+                          </span>
+                        ) : (
+                          item[column.key]
+                        )}
+                      </td>
+                    ))}
+                  </tr>
                 ))}
-              </div>
-            ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const FeeTables = () => {
     <div className="h-auto  ">
       {/* Table Header */}
       <div className="   ">
-        <div className="flex gap-10 justify-start bg-white pt-5 rounded-t-[12px]  ">
+        <div className="flex gap-10 justify-start bg-white pt-5 rounded-t-[12px] w-full  ">
           <h2
             onClick={() => handleTableSelection("Class Fee")}
             className={` font-inter text-[20px] font-semibold leading-[24.2px] text-left cursor-pointer  pl-[13px] pb-[25px] pr-[40px] ${

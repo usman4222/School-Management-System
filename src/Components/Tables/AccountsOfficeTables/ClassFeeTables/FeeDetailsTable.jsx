@@ -85,7 +85,7 @@ const FeeDetailsTable = () => {
       <div className=" pt-5 rounded-[12px] ">
         <div className="flex justify-between mb-5 ">
           <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 mt-5">
-          Students
+            Students
           </h2>
         </div>
 
@@ -94,7 +94,7 @@ const FeeDetailsTable = () => {
             Fee Details
           </h2>
 
-          <div className="flex justify-between pt-10">
+          <div className="flex justify-between pt-10 flex-wrap">
             <FeeBox title="Total Students" total="1,290" />
             <FeeBox title="Total Tuition Fee" total="1,290" />
             <FeeBox title="Total Tuition Fee" total="82,000" />
@@ -107,9 +107,7 @@ const FeeDetailsTable = () => {
           </div>
 
           <div className="py-10">
-            <button
-              className="rounded-[10px] border border-[#E2E8F0] px-5 py-1 bg-[#6A95D7]"
-            >
+            <button className="rounded-[10px] border border-[#E2E8F0] px-5 py-1 bg-[#6A95D7]">
               <span className="font-montserrat text-[18px] font-semibold leading-[20px] text-left text-white">
                 Grand Total:
               </span>
@@ -130,47 +128,46 @@ const FeeDetailsTable = () => {
           </button>
         </div>
       </div>
-      <div className="">
-        <div className="w-full flex items-center py-2  pt-4">
-          {columns.map((column, index) => (
-            <div
-              key={index}
-              className="flex uppercase gap-3 items-center w-[180px]"
-            >
-              <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                {column.label}
-              </h6>
-              <img src={updown} alt="arrow" />
-            </div>
-          ))}
-        </div>
-        {/* Table Rows */}
-        {currentRows.map((item) => (
-          <div
-            key={item.id}
-            className="w-full flex items-center h-[58px] py-2  "
-          >
-            <div className="flex items-center w-[180px] gap-3">
-              <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                {item[columns[0].key]}
-              </h6>
-            </div>
-            {columns.slice(1).map((column, colIndex) => (
-              <h6
-                key={colIndex}
-                className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[180px] text-left"
-              >
-                {column.key === "action" ? (
-                  <span className="text-[#1464DF] cursor-pointer">
-                    {item[column.key]}
-                  </span>
-                ) : (
-                  item[column.key]
-                )}
-              </h6>
+      <div className="h-[100vh] overflow-x-auto">
+        <table className="w-full bg-[#F8FAFC] rounded-[12px] ">
+          <thead className="bg-[#F8FAFC] ">
+            <tr className="pt-5  flex">
+              {columns.map((column, index) => (
+                <th
+                  key={index}
+                  className="flex uppercase gap-3 items-center w-[180px] px-6 py-4 text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] text-left"
+                >
+                  {column.label}
+                  <img src={updown} alt="arrow" />
+                </th>
+              ))}
+            </tr>
+          </thead>
+
+          <tbody>
+            {currentRows.map((item) => (
+              <tr key={item.id} className="h-[58px] py-2 flex">
+                <td className="w-[180px] px-6 py-4 text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                  {item[columns[0].key]}
+                </td>
+                {columns.slice(1).map((column, colIndex) => (
+                  <td
+                    key={colIndex}
+                    className="w-[180px] px-6 py-4 text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] text-left"
+                  >
+                    {column.key === "action" ? (
+                      <span className="text-[#1464DF] cursor-pointer">
+                        {item[column.key]}
+                      </span>
+                    ) : (
+                      item[column.key]
+                    )}
+                  </td>
+                ))}
+              </tr>
             ))}
-          </div>
-        ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

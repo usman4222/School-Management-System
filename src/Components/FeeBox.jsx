@@ -2,7 +2,7 @@ import React from "react";
 
 const FeeBox = ({ title, total, bgColor  }) => {
   return (
-    <div>
+    <div className="py-2">
       <div
         style={{ boxShadow: '0px 1px 3px 0px #0051AF1A',  backgroundColor: bgColor }}
         className="border border-[#E2E8F0] rounded-[10px] pl-5 pr-10 py-4"

@@ -89,11 +89,11 @@ const FeeChallanGenerationTable = () => {
           </h2>
         </div>
 
-        <div className="flex gap-5 ">
+        <div className="flex gap-5 flex-wrap">
           <select
             name="year"
             id="year"
-            class="border border-custom-border w-full rounded-md p-2 shadow-custom focus:outline-none"
+            class="border border-custom-border  rounded-md p-2 shadow-custom focus:outline-none"
           >
             <option value="" disabled selected>
               Select a year
@@ -107,7 +107,7 @@ const FeeChallanGenerationTable = () => {
           <select
             name="year"
             id="year"
-            class="border border-custom-border w-full rounded-md p-2 shadow-custom focus:outline-none"
+            class="border border-custom-border  rounded-md p-2 shadow-custom focus:outline-none"
           >
             <option value="" disabled selected>
               Select a year
@@ -121,52 +121,7 @@ const FeeChallanGenerationTable = () => {
           <select
             name="year"
             id="year"
-            class="border border-custom-border w-full rounded-md p-2 shadow-custom focus:outline-none"
-          >
-            <option value="" disabled selected>
-              Select a year
-            </option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-          </select>
-        </div>
-
-        <div className="flex gap-5 mt-2">
-          <select
-            name="year"
-            id="year"
-            class="border border-custom-border w-full rounded-md p-2 shadow-custom focus:outline-none"
-          >
-            <option value="" disabled selected>
-              Select a year
-            </option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-          </select>
-          <select
-            name="year"
-            id="year"
-            class="border border-custom-border w-full rounded-md p-2 shadow-custom focus:outline-none"
-          >
-            <option value="" disabled selected>
-              Select a year
-            </option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-          </select>
-          <select
-            name="year"
-            id="year"
-            class="border border-custom-border w-full rounded-md p-2 shadow-custom focus:outline-none"
+            class="border border-custom-border  rounded-md p-2 shadow-custom focus:outline-none"
           >
             <option value="" disabled selected>
               Select a year
@@ -179,51 +134,96 @@ const FeeChallanGenerationTable = () => {
           </select>
         </div>
 
-        <div className="flex justify-between py-10 ">
+        <div className="flex gap-5 mt-2 flex-wrap">
+          <select
+            name="year"
+            id="year"
+            class="border border-custom-border rounded-md p-2 shadow-custom focus:outline-none"
+          >
+            <option value="" disabled selected>
+              Select a year
+            </option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+          </select>
+          <select
+            name="year"
+            id="year"
+            class="border border-custom-border  rounded-md p-2 shadow-custom focus:outline-none"
+          >
+            <option value="" disabled selected>
+              Select a year
+            </option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+          </select>
+          <select
+            name="year"
+            id="year"
+            class="border border-custom-border rounded-md p-2 shadow-custom focus:outline-none"
+          >
+            <option value="" disabled selected>
+              Select a year
+            </option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+          </select>
+        </div>
+
+        <div className="flex justify-between py-10 gap-3 flex-wrap ">
           <div>
-            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left pb-4">
+            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left py-4">
               Tuition Fees
             </h5>
             <CheckboxComponent id="check1" label="25000" checked={true} />
           </div>
           <div>
-            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left pb-4">
+            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left py-4">
               Exam Fees
             </h5>
             <CheckboxComponent id="check1" label="25000" checked={true} />
           </div>
           <div>
-            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left pb-4">
+            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left py-4">
               Library Fees
             </h5>
             <CheckboxComponent id="check1" label="25000" checked={true} />
           </div>
           <div>
-            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left pb-4">
+            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left py-4">
               Medical Expenses
             </h5>
             <CheckboxComponent id="check1" label="25000" checked={true} />
           </div>
           <div>
-            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left pb-4">
+            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left py-4">
               Sports Fees
             </h5>
             <CheckboxComponent id="check1" label="25000" checked={true} />
           </div>
           <div>
-            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left pb-4">
+            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left py-4">
               Transport Fees
             </h5>
             <CheckboxComponent id="check1" label="25000" checked={true} />
           </div>
           <div>
-            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left pb-4">
+            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left py-4">
               Hostel Fees
             </h5>
             <CheckboxComponent id="check1" label="25000" checked={true} />
           </div>
           <div>
-            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left pb-4">
+            <h5 className="font-montserrat text-[14px] font-semibold leading-[22px] text-left py-4">
               Utility Charges
             </h5>
             <CheckboxComponent id="check1" label="25000" checked={true} />
@@ -235,7 +235,7 @@ const FeeChallanGenerationTable = () => {
             Fee Details
           </h2>
 
-          <div className="flex justify-between pt-10">
+          <div className="flex justify-between pt-10 flex-wrap">
             <FeeBox title="Total Students" total="1,290" />
             <FeeBox title="Total Tuition Fee" total="1,290" />
             <FeeBox title="Total Tuition Fee" total="82,000" />
@@ -274,49 +274,53 @@ const FeeChallanGenerationTable = () => {
           </button>
         </div>
       </div>
-      <div className="">
-        <div className="w-full flex items-center py-2  pt-4">
-          {columns.map((column, index) => (
-            <div
-              key={index}
-              className="flex uppercase gap-3 items-center w-[180px]"
-            >
-              <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                {column.label}
-              </h6>
-              <img src={updown} alt="arrow" />
-            </div>
-          ))}
+      <div className="h-[100vh]">
+        <div className="bg-[#F8FAFC] pt-5 rounded-[12px] overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="flex uppercase py-2 px-6 pt-4">
+                {columns.map((column, index) => (
+                  <th key={index} className="flex items-center gap-3 w-[180px]">
+                    <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                      {column.label}
+                    </h6>
+                    <img src={updown} alt="arrow" />
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {currentRows.map((item) => (
+                <tr
+                  key={item.id}
+                  className="w-full flex items-center h-[58px] px-6 py-2"
+                >
+                  <td className="flex items-center w-[180px] gap-3">
+                    <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
+                      {item[columns[0].key]}
+                    </h6>
+                  </td>
+                  {columns.slice(1).map((column, colIndex) => (
+                    <td
+                      key={colIndex}
+                      className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[180px] text-left"
+                    >
+                      {column.key === "action" ? (
+                        <span className="text-[#1464DF] cursor-pointer">
+                          {item[column.key]}
+                        </span>
+                      ) : (
+                        item[column.key]
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-        {/* Table Rows */}
-        {currentRows.map((item) => (
-          <div
-            key={item.id}
-            className="w-full flex items-center h-[58px] py-2  "
-          >
-            <div className="flex items-center w-[180px] gap-3">
-              <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                {item[columns[0].key]}
-              </h6>
-            </div>
-            {columns.slice(1).map((column, colIndex) => (
-              <h6
-                key={colIndex}
-                className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[180px] text-left"
-              >
-                {column.key === "action" ? (
-                  <span className="text-[#1464DF] cursor-pointer">
-                    {item[column.key]}
-                  </span>
-                ) : (
-                  item[column.key]
-                )}
-              </h6>
-            ))}
-          </div>
-        ))}
       </div>
-      <div className="flex gap-1 justify-end pt-5 pb-10">
+      <div className="flex gap-1 justify-end pt-5 pb-10 flex-wrap">
         <button className="flex items-center p-[10px] px-[8px] py-[10px] gap-[4px] rounded-[9px] custom-gradient border border-[#E2E8F0]">
           <span className="text-[#fff] font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
             Save Details
