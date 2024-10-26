@@ -14,14 +14,14 @@ const StudentInformation = () => {
       <div className="p-5 bg-[#F1F5F9] h-auto">
         <div>
           <Heading page={"Enrolment Form"} />
-          <div className="flex  justify-between items-center my-[14px] ">
-            <div className="flex items-center gap-[20px]">
+          <div className="flex flex-wrap justify-between items-center  ">
+            <div className="flex items-center gap-[20px] my-[14px]">
               <BackButton path={"/add-student"} />
               <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 ">
                 Enrolment Form
               </h2>
             </div>
-            <div className="flex gap-3 items-center">
+            <div className="flex flex-wrap gap-3 items-center my-[14px]">
               <Button text={"Edit"} btnImg={<RiEdit2Line />} />
               <Button text={"Print Fee"} btnImg={<FiPrinter />} />
             </div>
@@ -29,9 +29,9 @@ const StudentInformation = () => {
         </div>
 
         <div className="bg-white p-[24px] rounded-[12px]">
-          <div className=" w-full flex gap-20 items-center justify-between">
-            <div className=" flex flex-row justify-between w-full">
-              <div className="flex flex-col gap-[12px]">
+          <div className=" w-full flex-col xl:flex-row flex gap-20 items-center justify-between">
+            <div className=" flex flex-col sm:flex-row justify-between w-full">
+              <div className="flex flex-col gap-[12px] my-3">
                 <h4 className="text-black font-inter text-lg font-semibold">
                   Student ID: 167895
                 </h4>
@@ -44,11 +44,11 @@ const StudentInformation = () => {
                   </span>
                 </div>
               </div>
-              <div className="bg-[#E9E9E9] rounded-full w-[189.004px] h-[189.004px] flex justify-center items-center">
+              <div className="bg-[#E9E9E9] rounded-full w-[189.004px] h-[189.004px] flex justify-center items-center my-3">
                 <RiUserLine className="text-[75.792px]" />
               </div>
             </div>
-            <div className="flex justify-between w-full items-center ">
+            <div className="flex  flex-col xl:flex-row  justify-between w-full xl:items-center gap-5  ">
               <div className="flex flex-col gap-[5.94px]">
                 <h4 className="text-[#1E293B] font-inter text-2xl font-semibold leading-[28px]">
                   Hamid Nawaz
@@ -78,7 +78,7 @@ const StudentInformation = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex gap-8">
+              <div className="flex flex-wrap gap-8 my-3">
                 <button className=" text-[#5D5FEF] font-inter text-base font-medium leading-[20px]  p-[18px_26px] justify-center items-center gap-[4px] rounded-[9px] border stroke-[#E2E8F0] border-[#E2E8F0] bg-white">
                   Download info
                 </button>
@@ -89,12 +89,12 @@ const StudentInformation = () => {
             </div>
           </div>
 
-          <div className="flex gap-[60px] mt-[50px]">
+          <div className="flex flex-col xl:flex-row gap-[60px] mt-[50px]">
             <div className="flex w-full flex-col gap-[5.94px]">
               <h4 className="text-[#1E293B] font-inter text-2xl font-semibold leading-[28px]">
                 Contact Information
               </h4>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Home Address
                 </h6>
@@ -102,7 +102,7 @@ const StudentInformation = () => {
                   House # 648 Block A Satellite Town Sargodha
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   City
                 </h6>
@@ -110,7 +110,7 @@ const StudentInformation = () => {
                   Sargodha
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   State
                 </h6>
@@ -118,7 +118,7 @@ const StudentInformation = () => {
                   Punjab
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Postal Code
                 </h6>
@@ -126,7 +126,7 @@ const StudentInformation = () => {
                   40100
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Country
                 </h6>
@@ -139,7 +139,7 @@ const StudentInformation = () => {
               <h4 className="text-[#1E293B] font-inter text-2xl font-semibold leading-[28px]">
                 Enrollment Information
               </h4>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Enrollment Grade Level:
                 </h6>
@@ -147,7 +147,7 @@ const StudentInformation = () => {
                   Lorem ipsum
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Enrollment Date:
                 </h6>
@@ -155,7 +155,7 @@ const StudentInformation = () => {
                   Sep 11, 2024
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Program:
                 </h6>
@@ -163,7 +163,7 @@ const StudentInformation = () => {
                   Science
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Guardian Name:
                 </h6>
@@ -171,7 +171,7 @@ const StudentInformation = () => {
                   John D
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Guardian Phone Number:
                 </h6>
@@ -179,7 +179,7 @@ const StudentInformation = () => {
                   +92301234567
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Guardian Email Address:
                 </h6>
@@ -187,7 +187,7 @@ const StudentInformation = () => {
                   Email@email.com
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Guardian Occupation:
                 </h6>
@@ -198,12 +198,12 @@ const StudentInformation = () => {
             </div>
           </div>
 
-          <div className="flex gap-[60px] mt-[50px]">
+          <div className="flex flex-col xl:flex-row gap-[60px] mt-[50px]">
             <div className="flex w-full flex-col gap-[5.94px]">
               <h4 className="text-[#1E293B] font-inter text-2xl font-semibold leading-[28px]">
                 Academic Background
               </h4>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Previous School Name
                 </h6>
@@ -211,7 +211,7 @@ const StudentInformation = () => {
                   Allied School System
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   School Address
                 </h6>
@@ -219,7 +219,7 @@ const StudentInformation = () => {
                   House # 648 Block A Satellite Town Sargodha
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Previous Grade Level
                 </h6>
@@ -227,7 +227,7 @@ const StudentInformation = () => {
                   Lorem ipsum
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Reason For Leaving
                 </h6>
@@ -240,7 +240,7 @@ const StudentInformation = () => {
               <h4 className="text-[#1E293B] font-inter text-2xl font-semibold leading-[28px]">
                 Additional Attributes for Admission
               </h4>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Admission Number:
                 </h6>
@@ -248,7 +248,7 @@ const StudentInformation = () => {
                   Ad_0138209
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Enrollment Date:
                 </h6>
@@ -256,7 +256,7 @@ const StudentInformation = () => {
                   Sep 11, 2024
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Nationality:
                 </h6>
@@ -264,7 +264,7 @@ const StudentInformation = () => {
                   Pakistani
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Language Spoken At Home:
                 </h6>
@@ -272,7 +272,7 @@ const StudentInformation = () => {
                   English
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Guardian Phone Number:
                 </h6>
@@ -280,7 +280,7 @@ const StudentInformation = () => {
                   +92301234567
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Siblings in School:
                 </h6>
@@ -288,7 +288,7 @@ const StudentInformation = () => {
                   No
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Admission Status:
                 </h6>
@@ -296,7 +296,7 @@ const StudentInformation = () => {
                   Paid
                 </span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
                 <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
                   Admission Date:
                 </h6>

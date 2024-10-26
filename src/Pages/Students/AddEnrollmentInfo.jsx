@@ -64,13 +64,13 @@ const AddEnrollmentInfo = () => {
           </div>
         </div>
 
-        <div className=" flex bg-white py-[24px] rounded-lg w-full h-auto">
+        <div className=" flex bg-white py-[24px] flex-wrap rounded-lg w-full h-auto">
           <div className=" px-5 w-full ">
             <h4 className="text-[#1E293B] font-montserrat text-[20px] font-semibold leading-[24px]">
               Personal Information
             </h4>
-            <div className=" my-[14px] flex flex-col gap-[24px] ">
-              <div className="flex justify-between gap-[24px]">
+            <div className=" my-[14px] flex  flex-col gap-[24px] ">
+              <div className="flex justify-between flex-wrap  gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"

@@ -48,13 +48,13 @@ const AddStudent = () => {
           </div>
         </div>
 
-        <div className=" flex bg-white pt-[24px] pb-[150px] rounded-lg w-full h-auto">
+        <div className=" flex flex-col xl:flex-row bg-white pt-[24px] pb-[150px] rounded-lg w-full h-auto">
           <div className=" px-5 w-full ">
             <h4 className="text-[#1E293B] font-montserrat text-[20px] font-semibold leading-[24px]">
               Personal Information
             </h4>
             <div className=" my-[14px] flex flex-col gap-[24px] ">
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -82,7 +82,7 @@ const AddStudent = () => {
                   />
                 </div>
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -151,7 +151,7 @@ const AddStudent = () => {
                   className="p-2 w-full border-2 border-[#B5BDC5] rounded-[4px] focus:outline-none focus:ring-[#B5BDC5] text-[#667085] font-montserrat text-sm font-normal leading-6"
                 />
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -179,7 +179,7 @@ const AddStudent = () => {
                   />
                 </div>
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -222,7 +222,7 @@ const AddStudent = () => {
                   />
                 </div>
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -257,7 +257,7 @@ const AddStudent = () => {
             </h4>
 
             <div className="flex flex-col gap-[24px]">
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -285,7 +285,7 @@ const AddStudent = () => {
                   />
                 </div>
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -320,7 +320,7 @@ const AddStudent = () => {
             </h4>
 
             <div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="sectionSelector"
@@ -383,7 +383,7 @@ const AddStudent = () => {
             </h4>
 
             <div className="flex flex-col gap-[24px]">
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -411,7 +411,7 @@ const AddStudent = () => {
                   />
                 </div>
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -446,7 +446,7 @@ const AddStudent = () => {
             </h4>
 
             <div className="flex flex-col gap-[24px]">
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -525,7 +525,7 @@ const AddStudent = () => {
             </div>
           </div>
 
-          <div className=" w-[30%] pt-[37px] pr-[24px]">
+          <div className=" xl:w-[30%] px-6 md:px-0 pt-[37px] pr-[24px]">
             <div className="  sm:flex sm:flex-row-reverse sm:px-6">
               <Link to="/student-info">
                 <button

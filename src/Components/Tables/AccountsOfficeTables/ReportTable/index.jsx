@@ -56,7 +56,7 @@ const ReportTable = () => {
           <h2 className="font-montserrat text-[16px] font-bold leading-[24px] text-left text-[#1E293B]">
             Fee Details:
           </h2>
-          <div className="flex gap-4 mt-3 items-center border p-3 rounded-[10px] w-fit">
+          <div className="flex gap-4 flex-wrap mt-3 items-center border p-3 rounded-[10px] w-fit">
             <div className="flex flex-col space-y-2">
               <select
                 id="sectionSelector"
@@ -102,35 +102,30 @@ const ReportTable = () => {
               </select>
             </div>
           </div>
-          <div className="h-auto mb-20  bg-white rounded-b-[12px] pt-16">
-            <div className=" ">
-              <div className=" ">
-                <div className="w-full flex items-center py-2 ">
+          <div className="h-auto mb-20 bg-white rounded-b-[12px] pt-16 overflow-x-auto">
+            <table className="w-full">
+              {/* Table Head */}
+              <thead className="bg-[#F8FAFC]">
+                <tr className="">
                   {columns.map((column, index) => (
-                    <div
+                    <th
                       key={index}
-                      className="flex uppercase gap-3 items-center w-full  pl-6  "
+                      className="uppercase text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] py-2 px-6 text-left"
                     >
-                      <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                        {column.label}
-                      </h6>
-                    </div>
+                      {column.label}
+                    </th>
                   ))}
-                </div>
+                </tr>
+              </thead>
+
+              {/* Table Body */}
+              <tbody>
                 {currentRows.map((item) => (
-                  <div
-                    key={item.id}
-                    className="w-full flex items-center h-[58px] py-2 "
-                  >
-                    <div className="flex items-center w-full pl-6 gap-3 ">
-                      <h6 className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px]">
-                        {item[columns[0].key]}
-                      </h6>
-                    </div>
-                    {columns.slice(1).map((column, colIndex) => (
-                      <h6
+                  <tr key={item.id} className="border-b">
+                    {columns.map((column, colIndex) => (
+                      <td
                         key={colIndex}
-                        className="text-[#4D515A] pl-6 font-montserrat text-sm font-semibold leading-[22px] w-full text-left"
+                        className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] py-[10px] px-6"
                       >
                         {column.key === "action" ? (
                           <span className="text-[#1464DF] cursor-pointer">
@@ -139,19 +134,22 @@ const ReportTable = () => {
                         ) : (
                           item[column.key]
                         )}
-                      </h6>
+                      </td>
                     ))}
-                  </div>
+                  </tr>
                 ))}
-              </div>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div className="flex justify-between  border p-5 rounded-[12px] items-center">
+        <div className="flex flex-wrap justify-between  border p-5 rounded-[12px] items-center">
           <div>
-            <h3 className="font-montserrat text-[32px] font-bold leading-[24px] text-left">Total Fee:</h3>
+            <h3 className="font-montserrat text-[32px] font-bold leading-[24px] text-left">
+              Total Fee:
+            </h3>
           </div>
-            <FeeBox title="Total Students" total="1,290" bgColor="#fff"/>
+          <div className="flex flex-wrap py-3 gap-3">
+            <FeeBox title="Total Students" total="1,290" bgColor="#fff" />
             <FeeBox title="Total Tuition Fee" total="1,290" bgColor="#fff" />
             <FeeBox title="Total Tuition Fee" total="82,000" bgColor="#fff" />
             <FeeBox title="Total Exam Fee" total="1,290" bgColor="#fff" />
@@ -160,6 +158,7 @@ const ReportTable = () => {
             <FeeBox title="Total Sports Fee" total="1,290" bgColor="#fff" />
             <FeeBox title="Total Hostel Fee" total="52,000" bgColor="#fff" />
           </div>
+        </div>
       </div>
     </Layout>
   );

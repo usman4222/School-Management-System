@@ -6,7 +6,7 @@ const FeeCollectionTable = () => {
   const [selected, setSelected] = useState(false);
 
   const handleToggle = () => {
-    setSelected((prevSelected) => !prevSelected); // Toggle between selected and not selected
+    setSelected((prevSelected) => !prevSelected); 
   };
 
   return (
@@ -24,7 +24,7 @@ const FeeCollectionTable = () => {
           <h2 className="font-montserrat text-[16px] font-bold leading-[22px] text-left text-[#4D515A]">
             Challan Number
           </h2>
-          <div className="flex gap-4 mt-3 items-center">
+          <div className="flex flex-wrap gap-4 mt-3 items-center">
             <div>
               <input
                 type="text"
@@ -41,10 +41,10 @@ const FeeCollectionTable = () => {
           <h3 className="font-montserrat text-[22px] font-bold leading-[22px] text-left text-[#4D515A] mt-20 pb-10">
             Challan Form
           </h3>
-          <div className="flex justify-center  w-full items-center gap-10">
-            <div className="border border-[#000000]">
+          <div className="flex justify-center flex-wrap   items-center gap-10">
+            <div className="border w-full md:w-fit border-[#000000]">
               <div className="flex justify-end mt-5 px-5">
-                <div className="flex justify-between w-1/2">
+                <div className="flex justify-between w-full">
                   <h4 className="font-arial text-[16px] font-bold leading-[24px] text-left">
                     Smart School
                   </h4>
@@ -58,7 +58,7 @@ const FeeCollectionTable = () => {
                   Year: 2024
                 </h4>
               </div>
-              <div className="px-5">
+              <div className="px-5 ">
                 <h4 className="font-arial text-[16px] font-bold leading-[24px] text-left mt-1">
                   Challan No: 500026679
                 </h4>
@@ -81,8 +81,8 @@ const FeeCollectionTable = () => {
                   Reg No. 2204
                 </h4>
               </div>
-              <div className="px-10 mt-10">
-                <table class="min-w-full border border-collapse border-gray-300">
+              <div className="md:px-10 mt-10  overflow-x-auto flex flex-col">
+                <table class="min-w-full border   border-collapse border-gray-300 ">
                   <thead>
                     <tr>
                       <th class="border border-gray-300 px-4 py-2 ">NO.</th>
@@ -197,9 +197,9 @@ const FeeCollectionTable = () => {
                 </h6>
               </div>
             </div>
-            <div className="flex bg-[#D0CFCF]">
+            <div className="flex flex-wrap bg-[#D0CFCF]">
               <div>
-                <div className={" rounded-lg p-4 "}>
+                <div className=" rounded-lg p-4 ">
                   <div className="flex items-center">
                     <input
                       type="checkbox"

@@ -38,7 +38,7 @@ const AddTeacherPage = () => {
     <Layout>
       <div className="p-5 bg-[#F1F5F9]">
         <Heading page={"Teacher"} />
-        <div className="flex  justify-between items-center my-[14px] ">
+        <div className="flex flex-wrap  justify-between items-center my-[14px] ">
           <div className="flex items-center gap-[20px]">
             <div>
               <BackButton path={"/admin/teacher-management"} />
@@ -47,7 +47,7 @@ const AddTeacherPage = () => {
               Add Teacher
             </h2>
           </div>
-          <div className=" px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+          <div className=" px-4 py-3 flex gap-5">
             <button
               type="button"
               className="inline-flex w-full justify-center rounded-md  from-[#1A55A5] via-[#1A55A5] to-[#003F94] bg-[linear-gradient(90.6deg,#1A55A5_46.33%,#003F94_99.99%)] p-[10px_18px] text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
@@ -63,13 +63,13 @@ const AddTeacherPage = () => {
           </div>
         </div>
 
-        <div className=" flex bg-white py-[24px] rounded-lg w-full h-auto">
+        <div className=" flex flex-col xl:flex-row bg-white py-[24px] rounded-lg w-full h-auto">
           <div className=" px-5 w-full ">
             <h4 className="text-[#1E293B] font-montserrat text-[20px] font-semibold leading-[24px]">
               Personal Information
             </h4>
-            <div className=" my-[14px] flex flex-col gap-[24px] ">
-              <div className="flex justify-between gap-[24px]">
+            <div className=" my-[14px] flex flex-col gap-[24px] flex-wrap">
+              <div className="flex flex-col sm:flex-row  justify-between gap-[24px] ">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -110,7 +110,7 @@ const AddTeacherPage = () => {
                   className="p-2 border-2 w-full border-[#B5BDC5] rounded-[4px] focus:outline-none focus:ring-[#B5BDC5] text-[#667085] font-montserrat text-sm font-normal leading-6"
                 />
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -138,7 +138,7 @@ const AddTeacherPage = () => {
                   />
                 </div>
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -203,7 +203,7 @@ const AddTeacherPage = () => {
                   className="p-2 w-full border-2 border-[#B5BDC5] rounded-[4px] focus:outline-none focus:ring-[#B5BDC5] text-[#667085] font-montserrat text-sm font-normal leading-6"
                 />
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -231,7 +231,7 @@ const AddTeacherPage = () => {
                   />
                 </div>
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -259,7 +259,7 @@ const AddTeacherPage = () => {
                   />
                 </div>
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -287,7 +287,7 @@ const AddTeacherPage = () => {
                   />
                 </div>
               </div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -321,8 +321,8 @@ const AddTeacherPage = () => {
               Qualification Background
             </h4>
 
-            <div className="flex flex-col gap-[24px]">
-              <div className="flex justify-between gap-[24px]">
+            <div className="flex  flex-col gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -368,9 +368,8 @@ const AddTeacherPage = () => {
             <h4 className="text-[#1E293B] font-montserrat text-[20px] font-semibold leading-[24px] my-[14px]">
               Bank Account Information
             </h4>
-
             <div>
-              <div className="flex justify-between gap-[24px]">
+              <div className="flex flex-col sm:flex-row justify-between gap-[24px]">
                 <div className="flex flex-col space-y-2 w-full">
                   <label
                     htmlFor="addClass"
@@ -423,7 +422,7 @@ const AddTeacherPage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-between w-[30%] pt-[37px] pr-[24px]">
+          <div className="flex flex-col justify-between w-full px-10 md:px-52 xl:px-0 xl:w-[30%] pt-[37px] xl:pr-[24px] ">
             <div className="flex flex-col justify-start w-full">
               <label
                 htmlFor="addClass"
@@ -474,22 +473,26 @@ const AddTeacherPage = () => {
                 <p className="mt-2 text-gray-700">Selected file: {fileName}</p>
               )}
             </div>
-            <div className="  sm:flex sm:flex-row-reverse sm:px-6">
+            <div className=" mt-5 md:mt-0 ">
               <button
                 type="button"
-                className="inline-flex w-full justify-center rounded-md  from-[#1A55A5] via-[#1A55A5] to-[#003F94] bg-[linear-gradient(90.6deg,#1A55A5_46.33%,#003F94_99.99%)] p-[10px_18px] text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                className="inline-flex w-full my-2 justify-center rounded-md  from-[#1A55A5] via-[#1A55A5] to-[#003F94] bg-[linear-gradient(90.6deg,#1A55A5_46.33%,#003F94_99.99%)] p-[10px_18px] text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
               >
                 Save
               </button>
               <button
                 type="button"
-                className="inline-flex w-full justify-center rounded-[9px] border border-[var(--Stroke,#E2E8F0)] bg-white shadow-[2px_4px_10px_0px_rgba(180,191,205,0.2)] p-[10px_18px] text-[#F43F5E] font-montserrat text-[14px] font-medium leading-[20px] sm:ml-3 sm:w-auto"
+                className="inline-flex w-full my-2 justify-center rounded-[9px] border border-[var(--Stroke,#E2E8F0)] bg-white shadow-[2px_4px_10px_0px_rgba(180,191,205,0.2)] p-[10px_18px] text-[#F43F5E] font-montserrat text-[14px] font-medium leading-[20px] sm:ml-3 sm:w-auto"
               >
                 Discard
               </button>
             </div>
           </div>
         </div>
+
+
+
+        
       </div>
     </Layout>
   );

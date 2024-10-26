@@ -252,11 +252,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const trigger = useRef(null);
   const sidebar = useRef(null);
 
-  const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
-  const [sidebarExpanded, setSidebarExpanded] = useState(
-    storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
-  );
-
   const [adminOpen, setAdminOpen] = useState(false);
   const [academicsOpen, setAcademicsOpen] = useState(false);
   const [accountsOfficeOpen, setAccountsOfficeOpen] = useState(false);
@@ -285,18 +280,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     return () => document.removeEventListener("keydown", keyHandler);
   }, [sidebarOpen]);
 
-  useEffect(() => {
-    localStorage.setItem("sidebar-expanded", sidebarExpanded.toString());
-    if (sidebarExpanded) {
-      document.querySelector("body")?.classList.add("sidebar-expanded");
-    } else {
-      document.querySelector("body")?.classList.remove("sidebar-expanded");
-    }
-  }, [sidebarExpanded]);
-
-  const toggleSidebar = () => {
-    setSidebarExpanded(!sidebarExpanded);
-  };
 
   const adminDropdown = [
     { id: "classManagement", label: "Class Management", path: "/admin/class-management" },
@@ -322,7 +305,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 border-r border-[#E2E8F0] z-50 flex h-screen w-[262px] flex-col overflow-y-hidden bg-[#fff] duration-300 ease-linear lg:static lg:translate-x-0 ${
+      className={`absolute left-0 top-0 border-r border-[#E2E8F0] z-40 flex h-screen w-[262px] flex-col overflow-y-hidden bg-[#fff] duration-300 ease-linear lg:static lg:translate-x-0 ${
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
@@ -331,9 +314,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           <img src={Logo} alt="Logo" />
         </NavLink>
 
-        <button onClick={toggleSidebar}>
-          <img src={menu} alt="menu" />
-        </button>
         <button
           ref={trigger}
           onClick={() => setSidebarOpen(!sidebarOpen)}

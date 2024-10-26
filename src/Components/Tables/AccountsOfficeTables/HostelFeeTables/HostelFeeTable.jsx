@@ -48,9 +48,8 @@ const HostelFeeTable = () => {
               </div>
             </div>
           </div>
-          <div className="">
-            <table className="w-full border-collapse overflow-x-auto">
-              {/* Table Header */}
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse ">
               <thead>
                 <tr className="h-[58px] flex">
                   {columns.map((column, index) => (
@@ -64,16 +63,12 @@ const HostelFeeTable = () => {
                 </tr>
               </thead>
 
-              {/* Table Body */}
               <tbody>
                 {currentRows.map((item) => (
-                  <tr key={item.id} className="h-[58px]">
-                    {/* First Column (Key Column) */}
+                  <tr key={item.id} className="h-[58px] flex">
                     <td className="text-[#4D515A] font-montserrat text-sm font-semibold leading-[22px] w-[172px] pl-6 py-2 ">
                       {item[columns[0].key]}
                     </td>
-
-                    {/* Remaining Columns */}
                     {columns.slice(1).map((column, colIndex) => (
                       <td
                         key={colIndex}

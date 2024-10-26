@@ -28,7 +28,7 @@ export default function Dashboard() {
   return (
     <>
       <Layout>
-        {/* <main className="flex gap-5 p-[22px] bg-[#F1F5F9]">
+        <main className="flex gap-5 p-[22px] bg-[#F1F5F9]">
           <div className=" w-full">
             <h2 className="text-2xl font-bold mb-[20px]">Dashboard</h2>
             <div className="lg:flex gap-[20px]">
@@ -381,7 +381,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-        </main> */}
+        </main>
       </Layout>
     </>
   );
