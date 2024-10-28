@@ -30,8 +30,8 @@ const ViewResultTable = () => {
       father: "Joseph",
       obtainedMarks: "75",
       totalMarks: "75",
-      percentage: "100%", // Updated to 100% for consistency
-      status: "Passed", // Added missing 'status' field
+      percentage: "100%", 
+      status: "Passed",
     },
     {
       id: 2,
@@ -40,8 +40,8 @@ const ViewResultTable = () => {
       father: "Josephine",
       obtainedMarks: "65",
       totalMarks: "75",
-      percentage: "86.67%", // Updated to 86.67% for consistency
-      status: "Failed", // Added missing 'status' field
+      percentage: "86.67%",
+      status: "Failed", 
     },
   ];
 
@@ -109,9 +109,6 @@ const ViewResultTable = () => {
                         />
                         <TableDropdownMenu
                           visible={dropdownVisible === index}
-                          // Uncomment these lines when the functions are implemented
-                          // onEdit={() => handleEdit(item)}
-                          // onDelete={() => handleDelete(item.id)}
                         />
                       </div>
                     ) : column.key === "status" ? (

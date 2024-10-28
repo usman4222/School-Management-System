@@ -8,7 +8,7 @@ import ManageClassFeeTable from "./AccountsOfficeTables/ClassFeeTables/ManageCla
 import RoutesTable from "./AccountsOfficeTables/TransportFeeTables/RoutesTable";
 
 const FeeTables = () => {
-  const [selectedTable, setSelectedTable] = useState("Class Fee"); // Track the selected table
+  const [selectedTable, setSelectedTable] = useState("Class Fee"); 
 
   const handleTableSelection = (tableName) => {
     setSelectedTable(tableName);

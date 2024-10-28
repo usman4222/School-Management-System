@@ -123,7 +123,6 @@ const SectionManagementPage = () => {
         <AddSectionFormModal
           isOpen={isModalOpen}
           closeModal={closeModal}
-          // title="Add Class"
         />
       )}
     </Layout>

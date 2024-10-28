@@ -94,7 +94,6 @@ const index = () => {
         <div className=" px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
           <button
             type="button"
-            //   onClick={() => setOpen(false)}
             className="inline-flex w-full justify-center rounded-md  from-[#1A55A5] via-[#1A55A5] to-[#003F94] bg-[linear-gradient(90.6deg,#1A55A5_46.33%,#003F94_99.99%)] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
           >
             Add
