@@ -28,14 +28,25 @@ const StudentInformation = lazy(() =>
 );
 const AcademicsPage = lazy(() => import("./Pages/AcademicsPage/index.jsx"));
 const AllStudent = lazy(() => import("./Pages/Students/AllStudent.jsx"));
-const AddEnrollmentInfo = lazy(() => import("./Pages/Students/AddEnrollmentInfo.jsx"));
+const AddEnrollmentInfo = lazy(() =>
+  import("./Pages/Students/AddEnrollmentInfo.jsx")
+);
 const ViewStudent = lazy(() => import("./Pages/Students/ViewStudent.jsx"));
 const StudentReport = lazy(() => import("./Pages/StudentReport/index.jsx"));
-const AccountsOfficePage = lazy(() => import("./Pages/AccountsOfficePage/index.jsx"));   
-const FeeCollectionTable = lazy(() => import("./Components/Tables/AccountsOfficeTables/FeeCollectionTable/index.jsx"));
-const ReportTable = lazy(() => import("./Components/Tables/AccountsOfficeTables/ReportTable/index.jsx"));
+const AccountsOfficePage = lazy(() =>
+  import("./Pages/AccountsOfficePage/index.jsx")
+);
+const FeeCollectionTable = lazy(() =>
+  import(
+    "./Components/Tables/AccountsOfficeTables/FeeCollectionTable/index.jsx"
+  )
+);
+const ReportTable = lazy(() =>
+  import("./Components/Tables/AccountsOfficeTables/ReportTable/index.jsx")
+);
 const ExamDepartment = lazy(() => import("./Pages/ExamDepartment/index.jsx"));
 const AddResult = lazy(() => import("./Pages/ExamDepartment/AddResult.jsx"));
+const ViewResult = lazy(() => import("./Pages/ExamDepartment/ViewResult.jsx"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -116,6 +127,11 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
+          <Route path="/exam-department/view-result" element={<ViewResult />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
           <Route
             path="/admin/teacher-management"
             element={<TeacherManagementPage />}
@@ -144,12 +160,18 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/accounts-office/fee-structure" element={<AccountsOfficePage />} />
+          <Route
+            path="/accounts-office/fee-structure"
+            element={<AccountsOfficePage />}
+          />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/accounts-office/fee-collection" element={<FeeCollectionTable />} />
+          <Route
+            path="/accounts-office/fee-collection"
+            element={<FeeCollectionTable />}
+          />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
@@ -189,6 +211,6 @@ function App() {
       </Suspense>
     </BrowserRouter>
   );
-}  
+}
 
 export default App;

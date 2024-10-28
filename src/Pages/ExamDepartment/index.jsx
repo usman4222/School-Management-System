@@ -10,7 +10,7 @@ const ExamDepartment = () => {
   return (
     <Layout>
       <div className="pt-3 px-5  bg-[#f5f5fa]">
-        <Heading page={"Exams"} />
+        <Heading page={"Result"} />
         <div className="flex justify-between items-center  flex-wrap ">
           <div className="flex items-center gap-[10px] flex-wrap my-5">
             <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 pr-5 ">

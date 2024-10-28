@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import updown from "../../../assets/svg/updown.svg";
 import TablePagination from "../TablePagination";
+import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const ResultTable = () => {
   const [checkedRows, setCheckedRows] = useState([]);
@@ -31,7 +33,6 @@ const ResultTable = () => {
       year: "40,000",
       percentage: "40,000",
       totalMarks: "40,000",
-      action: "Edit",
     },
   ];
 
@@ -86,9 +87,11 @@ const ResultTable = () => {
                     className="px-6 py-2 text-[#4D515A] font-montserrat text-sm font-semibold"
                   >
                     {column.key === "action" ? (
-                      <span className="text-[#1464DF] cursor-pointer">
-                        {item[column.key]}
-                      </span>
+                      <Link to="/exam-department/view-result">
+                        <span className="text-[#4D515A] cursor-pointer flex items-center">
+                          <BsArrowRight className="mr-2 text-2xl" />
+                        </span>
+                      </Link>
                     ) : (
                       item[column.key]
                     )}
