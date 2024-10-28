@@ -14,20 +14,11 @@ const index = () => {
     <Layout>
       <div className="py-3 px-5  bg-[#f5f5fa]">
         <Heading page={"Enrolment Form"} />
-        <div className="flex justify-between items-center my-5 ">
-          {/* <div>
-            <Link to="/admin/subject-management">
-              <img
-                src={ArrowLeft}
-                alt="back"
-                className="bg-white rounded-[9px] p-[8px] cursor-pointer"
-              />
-            </Link>
-          </div> */}
-          <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 ">
+        <div className="flex justify-between items-center  flex-wrap">
+          <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 my-5">
             Enrolment Form
           </h2>
-          <div className="flex gap-3">
+          <div className="flex gap-3 my-5 flex-wrap">
             <Link to="/add-student">
               <Button text={"Add Student"} btnImg={<FaPlus />} />
             </Link>

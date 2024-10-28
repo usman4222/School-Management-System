@@ -281,6 +281,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   }, [sidebarOpen]);
 
 
+
   const adminDropdown = [
     { id: "classManagement", label: "Class Management", path: "/admin/class-management" },
     { id: "sectionManagement", label: "Section Management", path: "/admin/section-management" },
@@ -393,6 +394,19 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   );
                 }}
               </SidebarLinkGroup>
+
+              <li>
+                <NavLink
+                  to="/enrollment"
+                  className={`flex items-center gap-2.5 rounded-[9px] p-[14px] font-medium text-bodydark1 font-montserrat duration-300 ease-in-out hover:bg-[#F3F6FA] ${
+                     (pathname === "/enrollment" || pathname.includes("dashboard")) &&
+                          "bg-[#F3F6FA] custom-gradient"
+                  }`}
+                >
+                  <TbArticle />
+                  Enrolment Form
+                </NavLink>
+              </li>
 
               <SidebarLinkGroup activeCondition={academicsOpen}>
                 {(handleClick, open) => {
