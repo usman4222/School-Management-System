@@ -4,7 +4,7 @@ import Heading from "../../Components/Heading";
 import BackButton from "../../Components/BackButton";
 import Button from "../../Components/Button";
 import { FaPlus } from "react-icons/fa";
-import AddResultTable from "../../Components/Tables/AccountsOfficeTables/ResultTable/AddResultTable";
+import AddResultTable from "../../Components/Tables/ExamDepartmentTables/AddResultTable";
 
 const AddResult = () => {
   return (
@@ -14,7 +14,7 @@ const AddResult = () => {
         <div className="flex flex-wrap items-center justify-between ">
           <div className="flex flex-wrap items-center gap-4 py-[10px]">
             <div className="flex items-center gap-[10px]">
-              <BackButton path={"/exam-department"} />
+              <BackButton path={"/exam-department/result"} />
               <h2 className="text-[#1E293B] font-montserrat text-2xl font-bold leading-6 pr-16">
                 Add Result
               </h2>
@@ -24,7 +24,7 @@ const AddResult = () => {
               <div className="flex flex-col space-y-2">
                 <select
                   id="sectionSelector"
-                  className="py-2 px-4 border-2  border-[#D0D5DD] text-[#1E293B] font-montserrat text-sm font-medium rounded-[8px] focus:outline-none"
+                  className="py-[10px] px-[14px] border-2  border-[#D0D5DD] text-[#1E293B] font-montserrat text-sm font-medium rounded-[8px] focus:outline-none"
                 >
                   <option value="">All Classes</option>
                   <option value="section1">Section 1</option>
@@ -100,7 +100,7 @@ const AddResult = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-[10px] items-center">
+          <div className="flex gap-[10px] items-center flex-wrap">
             <Button text={"Result Sheet"} btnImg={<FaPlus />} />
             <Button text={"Save Result"} btnImg={<FaPlus />} />
           </div>

@@ -111,7 +111,7 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/exam-department" element={<ExamDepartment />} />
+          <Route path="/exam-department/result" element={<ExamDepartment />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>

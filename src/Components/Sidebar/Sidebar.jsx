@@ -253,6 +253,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const sidebar = useRef(null);
 
   const [adminOpen, setAdminOpen] = useState(false);
+  const [examOpen, setExamOpen] = useState(false);
   const [academicsOpen, setAcademicsOpen] = useState(false);
   const [accountsOfficeOpen, setAccountsOfficeOpen] = useState(false);
 
@@ -280,26 +281,73 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     return () => document.removeEventListener("keydown", keyHandler);
   }, [sidebarOpen]);
 
-
-
   const adminDropdown = [
-    { id: "classManagement", label: "Class Management", path: "/admin/class-management" },
-    { id: "sectionManagement", label: "Section Management", path: "/admin/section-management" },
-    { id: "subjectManagement", label: "Subject Management", path: "/admin/subject-management" },
-    { id: "teacherManagement", label: "Teacher Management", path: "/admin/teacher-management" },
-    { id: "studentReport", label: "Student Report", path: "/admin/student-report" },
-    { id: "attendance1", label: "Attendance1", path: "/admin/attendance1" },
-    { id: "attendance2", label: "Attendance2", path: "/admin/attendance2" },
+    {
+      id: "classManagement",
+      label: "Class Management",
+      path: "/admin/class-management",
+    },
+    {
+      id: "sectionManagement",
+      label: "Section Management",
+      path: "/admin/section-management",
+    },
+    {
+      id: "subjectManagement",
+      label: "Subject Management",
+      path: "/admin/subject-management",
+    },
+    {
+      id: "teacherManagement",
+      label: "Teacher Management",
+      path: "/admin/teacher-management",
+    },
+    {
+      id: "studentReport",
+      label: "Student Report",
+      path: "/admin/student-report",
+    }
   ];
 
   const academicsDropdown = [
     { id: "students", label: "Students", path: "/academics/students" },
-    { id: "pendingStudent", label: "Pending Student", path: "/academics/pending-students" },
+    {
+      id: "pendingStudent",
+      label: "Pending Student",
+      path: "/academics/pending-students",
+    },
+  ];
+
+  const examDropdown = [
+    { id: "result", label: "Results", path: "/exam-department/result" },
+    {
+      id: "sittingArrangement",
+      label: "Sitting Arrangement",
+      path: "/exam-department/sitting-arrangement",
+    },
+    {
+      id: "examAttendanceSheet",
+      label: "Exam Attendance Sheet",
+      path: "/exam-department/exam-attendance-sheet",
+    },
+    {
+      id: "dateSheet",
+      label: "Date Sheet",
+      path: "/exam-department/date-sheet",
+    },
   ];
 
   const accountsOfficeDropdown = [
-    { id: "feeStructure", label: "Fee Structure", path: "/accounts-office/fee-structure" },
-    { id: "feeCollection", label: "Fee Collection", path: "/accounts-office/fee-collection" },
+    {
+      id: "feeStructure",
+      label: "Fee Structure",
+      path: "/accounts-office/fee-structure",
+    },
+    {
+      id: "feeCollection",
+      label: "Fee Collection",
+      path: "/accounts-office/fee-collection",
+    },
     { id: "report", label: "Report", path: "/accounts-office/report" },
   ];
 
@@ -343,14 +391,17 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           <div>
             <ul className="mb-6 flex flex-col gap-1.5">
               <SidebarLinkGroup
-                activeCondition={pathname === "/" || pathname.includes("dashboard")}
+                activeCondition={
+                  pathname === "/" || pathname.includes("dashboard")
+                }
               >
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
                       <NavLink
                         className={`group relative flex items-center gap-2.5 rounded-[9px] font-montserrat p-[14px] text-[14px] font-medium text-bodydark1 duration-300 ease-in-out   ${
-                          (pathname === "/" || pathname.includes("dashboard")) &&
+                          (pathname === "/" ||
+                            pathname.includes("dashboard")) &&
                           "bg-[#F3F6FA] custom-gradient"
                         }`}
                         to="/"
@@ -370,13 +421,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                       <button
                         onClick={handleClick}
                         className={`group relative flex w-full items-center gap-2.5 rounded-[9px] p-[14px] font-montserrat font-medium text-bodydark1 duration-300 ease-in-out hover:bg-[#F3F6FA] ${
-                          pathname.includes("/admin") && "bg-[#F3F6FA] custom-gradient"
+                          pathname.includes("/admin") &&
+                          "bg-[#F3F6FA] custom-gradient"
                         }`}
                       >
                         <FaRegUser />
                         Admin
                       </button>
-                      <ul className={`ml-4 flex flex-col ${open ? "block" : "hidden"}`}>
+                      <ul
+                        className={`ml-4 flex flex-col ${
+                          open ? "block" : "hidden"
+                        }`}
+                      >
                         {adminDropdown.map(({ id, label, path }) => (
                           <li key={id}>
                             <NavLink
@@ -399,8 +455,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 <NavLink
                   to="/enrollment"
                   className={`flex items-center gap-2.5 rounded-[9px] p-[14px] font-medium text-bodydark1 font-montserrat duration-300 ease-in-out hover:bg-[#F3F6FA] ${
-                     (pathname === "/enrollment" || pathname.includes("dashboard")) &&
-                          "bg-[#F3F6FA] custom-gradient"
+                    pathname === "/enrollment" && "bg-[#F3F6FA] custom-gradient"
                   }`}
                 >
                   <TbArticle />
@@ -415,13 +470,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                       <button
                         onClick={handleClick}
                         className={`group relative flex w-full items-center gap-2.5 rounded-[9px] p-[14px] font-montserrat font-medium text-bodydark1 duration-300 ease-in-out hover:bg-[#F3F6FA] ${
-                          pathname.includes("/academics") && "bg-[#F3F6FA] custom-gradient"
+                          pathname.includes("/academics") &&
+                          "bg-[#F3F6FA] custom-gradient"
                         }`}
                       >
                         <HiOutlineUsers />
                         Academics
                       </button>
-                      <ul className={`ml-4 flex flex-col ${open ? "block" : "hidden"}`}>
+                      <ul
+                        className={`ml-4 flex flex-col ${
+                          open ? "block" : "hidden"
+                        }`}
+                      >
                         {academicsDropdown.map(({ id, label, path }) => (
                           <li key={id}>
                             <NavLink
@@ -447,19 +507,61 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                       <button
                         onClick={handleClick}
                         className={`group relative flex w-full items-center gap-2.5 rounded-[9px] p-[14px] font-montserrat font-medium text-bodydark1 duration-300 ease-in-out hover:bg-[#F3F6FA] ${
-                          pathname.includes("/accounts-office") && "bg-[#F3F6FA] custom-gradient"
+                          pathname.includes("/accounts-office") &&
+                          "bg-[#F3F6FA] custom-gradient"
                         }`}
                       >
                         <RiMoneyDollarCircleLine />
                         Accounts Office
                       </button>
-                      <ul className={`ml-4 flex flex-col ${open ? "block" : "hidden"}`}>
+                      <ul
+                        className={`ml-4 flex flex-col ${
+                          open ? "block" : "hidden"
+                        }`}
+                      >
                         {accountsOfficeDropdown.map(({ id, label, path }) => (
                           <li key={id}>
                             <NavLink
                               to={path}
                               className={`block rounded-[9px] p-[10px] font-medium text-bodydark1 font-montserrat duration-300 ease-in-out hover:bg-[#F3F6FA] ${
                                 pathname.includes(path) && "bg-[#F3F6FA] "
+                              }`}
+                            >
+                              {label}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+
+              <SidebarLinkGroup activeCondition={examOpen}>
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <button
+                        onClick={handleClick}
+                        className={`group relative flex w-full items-center gap-2.5 rounded-[9px] p-[14px] font-montserrat font-medium text-bodydark1 duration-300 ease-in-out hover:bg-[#F3F6FA] ${
+                          pathname.includes("/exam-department") &&
+                          "bg-[#F3F6FA] custom-gradient"
+                        }`}
+                      >
+                        <HiOutlineUsers />
+                        Exams  Department
+                      </button>
+                      <ul
+                        className={`ml-4 flex flex-col ${
+                          open ? "block" : "hidden"
+                        }`}
+                      >
+                        {examDropdown.map(({ id, label, path }) => (
+                          <li key={id}>
+                            <NavLink
+                              to={path}
+                              className={`block rounded-[9px] p-[10px] font-medium text-bodydark1 font-montserrat duration-300 ease-in-out hover:bg-[#F3F6FA] ${
+                                pathname.includes(path) && "bg-[#F3F6FA]"
                               }`}
                             >
                               {label}
