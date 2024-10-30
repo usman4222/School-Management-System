@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import updown from "../../../assets/svg/updown.svg";
 import TablePagination from "../TablePagination";
-import { BsArrowRight } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 

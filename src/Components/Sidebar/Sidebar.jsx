@@ -2,18 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import SidebarLinkGroup from "./SidebarLinkGroup";
 import Logo from "../../assets/svg/logo.svg";
-import menu from "../../assets/svg/menu.svg";
 import { RxDashboard } from "react-icons/rx";
 import { FaRegUser } from "react-icons/fa";
 import { HiOutlineUsers } from "react-icons/hi";
 import { MdChecklist } from "react-icons/md";
 import { TbArticle } from "react-icons/tb";
-import { GrArticle } from "react-icons/gr";
-import {
-  RiMoneyDollarCircleLine,
-  RiMoneyPoundCircleLine,
-} from "react-icons/ri";
-import { LuCoins } from "react-icons/lu";
+import { RiMoneyDollarCircleLine } from "react-icons/ri";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const location = useLocation();
@@ -76,7 +70,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       id: "studentReport",
       label: "Student Report",
       path: "/admin/student-report",
-    }
+    },
   ];
 
   const academicsDropdown = [
@@ -119,6 +113,20 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       path: "/accounts-office/fee-collection",
     },
     { id: "report", label: "Report", path: "/accounts-office/report" },
+  ];
+
+  const hostelDropdown = [
+    {
+      id: "pendingStudents",
+      label: "Pending Students",
+      path: "/hostel-management/pending-student",
+    },
+    {
+      id: "students",
+      label: "Students",
+      path: "/hostel-management/students",
+    },
+    { id: "rooms", label: "Romms", path: "/hostel-management/rooms" },
   ];
 
   return (
@@ -319,7 +327,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                         }`}
                       >
                         <HiOutlineUsers />
-                        Exams  Department
+                        Exams Department
                       </button>
                       <ul
                         className={`ml-4 flex flex-col ${
@@ -332,6 +340,43 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                               to={path}
                               className={`block rounded-[9px] p-[10px] font-medium text-bodydark1 font-montserrat duration-300 ease-in-out hover:bg-[#F3F6FA] ${
                                 pathname.includes(path) && "bg-[#F3F6FA]"
+                              }`}
+                            >
+                              {label}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+
+              <SidebarLinkGroup activeCondition={hostelDropdown}>
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <button
+                        onClick={handleClick}
+                        className={`group relative flex w-full items-center gap-2.5 rounded-[9px] p-[14px] font-montserrat font-medium text-bodydark1 duration-300 ease-in-out hover:bg-[#F3F6FA] ${
+                          pathname.includes("/hostel-management") &&
+                          "bg-[#F3F6FA] custom-gradient"
+                        }`}
+                      >
+                        <RiMoneyDollarCircleLine />
+                        Hostel Management
+                      </button>
+                      <ul
+                        className={`ml-4 flex flex-col ${
+                          open ? "block" : "hidden"
+                        }`}
+                      >
+                        {hostelDropdown.map(({ id, label, path }) => (
+                          <li key={id}>
+                            <NavLink
+                              to={path}
+                              className={`block rounded-[9px] p-[10px] font-medium text-bodydark1 font-montserrat duration-300 ease-in-out hover:bg-[#F3F6FA] ${
+                                pathname.includes(path) && "bg-[#F3F6FA] "
                               }`}
                             >
                               {label}

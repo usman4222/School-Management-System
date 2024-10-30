@@ -53,7 +53,9 @@ const AttendanceDateSheet = lazy(() =>
 const DateSheet = lazy(() =>
   import("./Pages/ExamDepartment/DateSheet.jsx")
 );
-
+const HostelManagementPage = lazy(() =>
+  import("./Pages/HostelManagementPage/index.jsx")
+);
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -70,6 +72,7 @@ function App() {
     return <div>Loading...</div>;
     student - info;
   }
+
   return (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
@@ -147,6 +150,11 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/exam-department/date-sheet" element={<DateSheet />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/hostel-management/pending-student" element={<HostelManagementPage />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
