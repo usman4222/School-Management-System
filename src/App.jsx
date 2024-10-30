@@ -57,6 +57,9 @@ const HostelManagementPage = lazy(() =>
 const Students = lazy(() =>
   import("./Pages/HostelManagementPage/Students.jsx")
 );
+const Rooms = lazy(() =>
+  import("./Pages/HostelManagementPage/Rooms.jsx")
+);
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -165,6 +168,11 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/hostel-management/students" element={<Students />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/hostel-management/rooms" element={<Rooms />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
