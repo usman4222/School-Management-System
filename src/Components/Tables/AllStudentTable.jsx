@@ -307,7 +307,7 @@ const AllStudentTable = () => {
               visible={dropdownVisible === index}
               onEdit={() => handleEdit(item)}
               onDelete={() => {
-                handleDelete(item.id); // You may want to pass the item's ID
+                handleDelete(item.id); 
               }}
             />
           </div>

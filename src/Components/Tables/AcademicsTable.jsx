@@ -206,7 +206,7 @@ const AcademicsTable = () => {
 
   const openDelConfirmationModal = () => setIsDelConfirmationModalOpen(true);
 
-  const closeDelConfirmationModal = () => setIsDelConfirmationModalOpen(false);
+  const closeDelConfirmationModal = () => setIsDelConfirmationModalOpen(false); 
 
   return (
     <div className="h-[100vh]">
