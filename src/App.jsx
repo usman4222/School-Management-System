@@ -50,12 +50,14 @@ const ViewResult = lazy(() => import("./Pages/ExamDepartment/ViewResult.jsx"));
 const AttendanceDateSheet = lazy(() =>
   import("./Pages/ExamDepartment/AttendanceDateSheet.jsx")
 );
-const DateSheet = lazy(() =>
-  import("./Pages/ExamDepartment/DateSheet.jsx")
-);
+const DateSheet = lazy(() => import("./Pages/ExamDepartment/DateSheet.jsx"));
 const HostelManagementPage = lazy(() =>
   import("./Pages/HostelManagementPage/index.jsx")
 );
+const Students = lazy(() =>
+  import("./Pages/HostelManagementPage/Students.jsx")
+);
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -154,7 +156,15 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/hostel-management/pending-student" element={<HostelManagementPage />} />
+          <Route
+            path="/hostel-management/pending-student"
+            element={<HostelManagementPage />}
+          />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/hostel-management/students" element={<Students />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
