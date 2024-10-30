@@ -47,7 +47,12 @@ const ReportTable = lazy(() =>
 const ExamDepartment = lazy(() => import("./Pages/ExamDepartment/index.jsx"));
 const AddResult = lazy(() => import("./Pages/ExamDepartment/AddResult.jsx"));
 const ViewResult = lazy(() => import("./Pages/ExamDepartment/ViewResult.jsx"));
-const AttendanceDateSheet = lazy(() => import("./Pages/ExamDepartment/AttendanceDateSheet.jsx"));
+const AttendanceDateSheet = lazy(() =>
+  import("./Pages/ExamDepartment/AttendanceDateSheet.jsx")
+);
+const DateSheet = lazy(() =>
+  import("./Pages/ExamDepartment/DateSheet.jsx")
+);
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -118,7 +123,7 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/academics/students" element={<AcademicsPage />} />  
+          <Route path="/academics/students" element={<AcademicsPage />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
@@ -128,12 +133,20 @@ function App() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/exam-department/exam-attendance-sheet" element={<AttendanceDateSheet />} />
+          <Route
+            path="/exam-department/exam-attendance-sheet"
+            element={<AttendanceDateSheet />}
+          />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/exam-department/view-result" element={<ViewResult />} />
+        </Routes>
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/exam-department/date-sheet" element={<DateSheet />} />
         </Routes>
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>

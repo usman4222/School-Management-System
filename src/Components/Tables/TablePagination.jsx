@@ -13,7 +13,7 @@ const TablePagination = ({
   const currentRangeStart = indexOfFirstRow + 1;
   const currentRangeEnd = Math.min(indexOfLastRow, totalRows);
   return (
-    <div className="flex justify-center md:justify-end flex-wrap gap-3  h-[72px] bg-[#F8FAFC] ">
+    <div className="flex justify-center md:justify-end flex-wrap gap-3  h-auto bg-[#F8FAFC] px-3">
       <div className="flex items-center gap-5 text-[#64748B] py-2">
         <span className="font-montserrat text-[14px] font-medium leading-[17.07px] text-left">
           {currentRangeStart}-{currentRangeEnd} of {totalRows}
