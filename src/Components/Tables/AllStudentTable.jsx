@@ -131,16 +131,6 @@ const AllStudentTable = () => {
         admissionStatus: "Pending",
         dateAdded: "12/02/2024",
       },
-      {
-        id: 11,
-        regNo: "#132548",
-        student: "Hamid Nawaz",
-        email: "abc@xyz.com",
-        phone: "+9231234567890",
-        class: "9A",
-        admissionStatus: "Pending",
-        dateAdded: "12/02/2024",
-      },
   ];
 
   const indexOfLastRow = currentPage * rowsPerPage;
