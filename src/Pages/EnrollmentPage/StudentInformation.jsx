@@ -51,7 +51,7 @@ const StudentInformation = () => {
             <div className="flex  flex-col xl:flex-row  justify-between w-full xl:items-center gap-5  ">
               <div className="flex flex-col gap-[5.94px]">
                 <h4 className="text-[#1E293B] font-inter text-2xl font-semibold leading-[28px]">
-                  Hamid Nawaz
+                  Hamid Aqwa
                 </h4>
                 <div className="flex items-center gap-[12px]">
                   <h6 className="text-[#B0B0B0] font-inter text-[16.389px] font-medium leading-[22px]">
