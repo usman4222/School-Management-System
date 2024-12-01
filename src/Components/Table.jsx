@@ -120,7 +120,7 @@ const Table = ([
                   <p className="text-black dark:text-white">ddfdf</p>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
-                  <p className="text-black dark:text-white">sdfg</p>
+                  <p className="text-black dark:text-white">24-30-24</p>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <div className="flex items-center space-x-3.5">
