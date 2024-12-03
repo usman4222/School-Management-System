@@ -33,7 +33,7 @@ const StudentInformation = () => {
             <div className=" flex flex-col sm:flex-row justify-between w-full">
               <div className="flex flex-col gap-[12px] my-3">
                 <h4 className="text-black font-inter text-lg font-semibold">
-                  Student ID: 167895
+                  Student ID: 876765
                 </h4>
                 <h6 className="text-gray-500 font-inter text-base font-medium">
                   Joined: Mon, July 22,2022
