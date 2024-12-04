@@ -114,7 +114,7 @@ const Table = ([
                   sdfgsd
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
-                  <p className="text-black dark:text-white">dfdf</p>
+                  <p className="text-black dark:text-white">Id</p>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <p className="text-black dark:text-white">ddfdf</p>
