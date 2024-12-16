@@ -36,7 +36,7 @@ const StudentInformation = () => {
                   Student ID: 876765
                 </h4>
                 <h6 className="text-gray-500 font-inter text-base font-medium">
-                  Joined: Mon, July 22,2022
+                  Joined: Mon, July 22,2024
                 </h6>
                 <div className="flex w-fit p-[6px_14px] rounded-[20px] bg-[rgba(209,250,229,0.5)] ">
                   <span className="text-[#059691] font-inter text-base font-medium">
