@@ -61,7 +61,7 @@ const EnrollmentTable = () => {
       class: "Active",
       medium: "2024-09-10",
       phone: "03245345334M",
-      gender: "Male",
+      gender: "Female",
       feeStatus: "Paid",
       dateAdded: "2024-07-22",
     },
