@@ -107,7 +107,7 @@ const StudentInformation = () => {
                   City
                 </h6>
                 <span className="text-[#14171D] font-inter text-lg font-normal leading-[22px]">
-                  Sargodha
+                  Lahore
                 </span>
               </div>
               <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
