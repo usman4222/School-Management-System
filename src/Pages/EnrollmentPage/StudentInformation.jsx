@@ -123,7 +123,7 @@ const StudentInformation = () => {
                   Postal Code
                 </h6>
                 <span className="text-[#14171D] font-inter text-lg font-normal leading-[22px]">
-                  40100
+                  40199
                 </span>
               </div>
               <div className="flex 2xl:flex-row flex-col 2xl:items-center justify-between">
