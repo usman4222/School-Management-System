@@ -131,7 +131,7 @@ const StudentInformation = () => {
                   Country
                 </h6>
                 <span className="text-[#14171D] font-inter text-lg font-normal leading-[22px]">
-                  Pakistan
+                  India
                 </span>
               </div>
             </div>
