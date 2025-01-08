@@ -124,7 +124,7 @@ const Table = ([
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <div className="flex items-center space-x-3.5">
-                    <button className="hover:text-primary">Del</button>
+                    <button className="hover:text-primary">Delete</button>
                     <button className="hover:text-primary">Edit</button>
                   </div>
                 </td>
