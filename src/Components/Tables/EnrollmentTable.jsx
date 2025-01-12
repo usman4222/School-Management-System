@@ -113,7 +113,7 @@ const EnrollmentTable = () => {
       id: 8,
       Sr: "Jane Smith",
       student: "Science",
-      class: "Active",
+      class: "INActive",
       medium: "2024-09-10",
       phone: "03245345334M",
       gender: "Female",
