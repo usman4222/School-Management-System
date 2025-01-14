@@ -62,7 +62,7 @@ const AcademicsTable = () => {
       medium: "2024-09-10",
       phone: "03245345334M",
       gender: "Female",
-      feeStatus: "Paid",
+      feeStatus: "UnPaid",
       dateAdded: "2024-07-22",
     },
     {
