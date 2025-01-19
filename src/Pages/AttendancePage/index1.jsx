@@ -30,7 +30,7 @@ const index1 = () => {
       Leave: "2",
       Present: "2",
       Absent: "2",
-      ClassTeacher: "John",
+      ClassTeacher: "Ali",
       Status: "--",
     },
     {
