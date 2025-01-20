@@ -35,7 +35,7 @@ const index2 = () => {
       SrNo: "#132548",
       RegNo: "#132548",
       Student: "Hamid Nawaz",
-      FatherName: "John",
+      FatherName: "Ali",
       OnLeave: "2",
       Present: "2",
       Absent: "2",
