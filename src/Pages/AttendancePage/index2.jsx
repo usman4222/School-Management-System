@@ -49,7 +49,7 @@ const index2 = () => {
       OnLeave: "2",
       Present: "2",
       Absent: "2",
-      Remarks: "John",
+      Remarks: "A",
     },
 
     // ... Repeat for other rows as needed
