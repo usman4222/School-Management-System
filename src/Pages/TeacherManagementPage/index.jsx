@@ -108,7 +108,7 @@ const ClassManagementPage = () => {
             <div className="mr-[20px]">
               <select className="flex w-full h-[44px] px-[15.94px] py-[9.94px] justify-center items-start gap-[4.005px] flex-shrink-0 rounded border border-[#B5BDC5] bg-[#FFF]">
                 <option value="">Teacher Employment</option>
-                <option value="option1">Option 1</option>
+                <option value="option1">Option 2</option>
                 <option value="option2">Option 2</option>
               </select>
             </div>
