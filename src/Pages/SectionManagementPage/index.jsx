@@ -50,9 +50,9 @@ const SectionManagementPage = () => {
   };
 
   const rows = [
-    { id: 1, createdAt: "May 11, 2024", className: "A" },
-    { id: 2, createdAt: "May 11, 2024", className: "B" },
-    { id: 3, createdAt: "May 11, 2024", className: "A" },
+    { id: 1, createdAt: "May 11, 2025", className: "A" },
+    { id: 2, createdAt: "May 11, 2025", className: "B" },
+    { id: 3, createdAt: "May 11, 2025", className: "A" },
   ];
 
   const columns = [
