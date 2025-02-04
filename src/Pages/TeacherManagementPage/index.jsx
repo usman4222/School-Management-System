@@ -58,7 +58,7 @@ const ClassManagementPage = () => {
   const rows = [
     {
       TeacherId: "#132548",
-      Name: "Jane Smith",
+      Name: "Jawad Ali",
       Role: "Professor",
       Contact: "+1 (670) 960-8854",
       Joining: "04/07/23",
