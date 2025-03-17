@@ -31,7 +31,7 @@ const FeeChallanGenerationTable = () => {
       sr: "1",
       class: "7th",
       totalFee: "40,000",
-      tuitionFee: "40,000",
+      tuitionFee: "4,000",
       examFee: "40,000",
       sportsFee: "40,000",
       libraryFee: "40,000",
