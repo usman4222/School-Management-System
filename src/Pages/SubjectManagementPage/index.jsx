@@ -58,7 +58,7 @@ const SubjectManagementPage = () => {
     },
     {
       Period: "May 12, 2024",
-      subjectName: "Science",
+      subjectName: "Math",
       teacher: "Ms. Johnson",
     },
     {
